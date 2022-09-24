@@ -1,0 +1,39 @@
+
+# Group Exercise
+
+<br>
+
+Ensure that you have the following packages installed and loaded: 
+
+```{r load-packages2, eval = FALSE}
+install.packages("tidyverse")
+install.packages("openintro")
+install.packages("GGally")
+install.packages("broom")
+
+library(tidyverse)
+library(openintro)
+library(GGally)
+library(broom)
+```
+
+<br>
+
+1. Create a boxplot of `language` against `score` with colour for `gender`.
+
+<br>
+
+2. Produce a pairs plot for the variables not included within the pairs plot produced in the lab and not including the ID variables (i.e not columns 1, 2 and 13 to 19). 
+
+<br>
+
+3. From the pairs plot produced in the lab and in Q2, determine which variables have the strongest correlation. 
+
+<br>
+
+4. Fit a multiple linear regression model for the relationship of `score` against `bty_avg` and `age`. 
+
+<br>
+
+5. Produce residual plots for the model above and determine if it provides a good fit. Compare this fit with the model fitted in the lab containing just `bty_avg` and `gender`. 
+

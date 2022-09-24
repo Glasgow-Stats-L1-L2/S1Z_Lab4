@@ -1,0 +1,294 @@
+# Finding the Best Model
+
+<br>
+
+Clearly in these data, as in many examples, there are many possible configurations of predictor variables.  One approach to deciding which variables to include in our model is called *backward elimination*, described in <a href="https://www.openintro.org/redirect.php?go=os4_tablet&referrer=/stat/os4.php#page=353">OpenIntro Section 9.2 Page 353</a>.  We will start with a "full" model that predicts lecturer score based on rank, gender, ethnicity, language of the university where they got their degree, age, proportion of students that filled out evaluations, class size, course level, number of lecturers, number of credits, average beauty rating, outfit, and picture color.
+
+<br>
+
+## **Exercise 6**
+
+Create the full model explained above and name it `fullmodel`.
+
+`r hide("Hint")`
+
+```{r hint6, eval = FALSE, echo = TRUE}
+fullmodel <- lm(??? ~ ??? + ... + ???, data = ???)
+
+summary(???)
+```
+
+`r unhide()`
+
+
+`r hide("Solution")`
+
+```{r sol6, eval = FALSE, echo = TRUE}
+fullmodel <- lm(score ~ rank + gender + ethnicity + language + age + cls_perc_eval + cls_students + cls_level + cls_profs + cls_credits + bty_avg + pic_outfit + pic_color, data = evals)
+
+summary(fullmodel)
+```
+
+`r unhide()`
+
+<br>
+
+**What is the correct interpretation for the coefficient associated with the `age` variable?**
+
+```{r, echo = FALSE}
+q_interp <- sample(c(
+         answer = "A one unit increase in `age` is associated with a 0.009 decrease in `score` when all other variables are held constant.",
+         "A one unit increase in `age` is associated with a 0.009 increase in `score` when all other variables are held constant.",
+         "A one unit decrease in `age` is associated with a 0.009 decrease in `score` when all other variables are held constant.",
+         "A one unit decrease in `age` is associated with a 0.009 increase in `score`."
+)
+)
+```
+
+`r longmcq(q_interp)`
+
+<br>
+
+**What is the correct interpretation for the coefficient associated with the `ethnicity` variable?**
+
+```{r, echo = FALSE}
+q_interp2 <- sample(c(
+         answer = "A slope of 0.12349 means that the model predicts a 0.123 unit higher score for those who are not minority ethnicity compared to those who are a minority ethnicity when all other variables are held constant.",
+         "A slope of 0.12349 means that the model predicts a 0.123 unit higher score for those who are a minority ethnicity compared to those who are not a minority ethnicity when all other variables are held constant.",
+         "A one unit increase in `ethnicity` is associated with a 0.12349 unit increase in `score`.",
+         "An one unit increase in `ethnicity` is associated with a 0.12349 decrease in `score`."
+)
+)
+```
+
+`r longmcq(q_interp2)`
+
+<br>
+
+## **Exercise 7**
+
+Drop the variable with the highest p-value and re-fit the model. Name this model `m1`. Produce a summary of the updated model.
+
+`r hide("Hint")`
+
+```{r hint7, eval = FALSE, echo = TRUE}
+m1 <- lm(??? ~ ??? + ... + ???, data = ???)
+
+summary(???)
+```
+
+`r unhide()`
+
+
+`r hide("Solution")`
+
+```{r sol7, eval = FALSE, echo = TRUE}
+m1 <- lm(score ~ rank + gender + ethnicity + language + age + cls_perc_eval + cls_students + cls_level + cls_credits + bty_avg + pic_outfit + pic_color, 
+         data = evals)
+
+summary(m1)
+```
+
+`r unhide()`
+
+<br>
+
+Hopefully you saw that the highest p-value is associated with `cls_profssingle` - a categorical variable which states the number of lecturers teaching sections in course in sample, with the levels: single, multiple.
+
+*Note* that the coefficients and significance of the other predictor variables change when the variable `cls_profs` was removed. One of the things that makes multiple regression interesting is that coefficient estimates depend on the other variables that are included in the model. 
+
+<!-- If not, the dropped variable may have been collinear with the other predictor variables. -->
+
+<br>
+
+## **Exercise 8**
+
+Run the following code to use backward elimination to find the 'best' model for the data. As we are using backward elimination, at each stage we drop the variable with the highest p-value which corresponds to the least significant variable to the model.
+
+<br>
+```{r fullmodel-selection, eval = FALSE}
+m2 <- lm(score ~ rank + gender + ethnicity + language + age + cls_perc_eval 
+             + cls_students + cls_credits + bty_avg 
+             + pic_outfit + pic_color, data = evals)
+
+summary(m2)
+
+```
+<br>
+```{r fullmodel-selection2, eval = FALSE}
+m3 <- lm(score ~ rank + gender + ethnicity + language + age + cls_perc_eval 
+             + cls_credits + bty_avg + pic_outfit + pic_color, data = evals)
+
+summary(m3)
+
+```
+<br>
+```{r fullmodel-selection3, eval = FALSE}
+m4 <- lm(score ~ gender + ethnicity + language + age + cls_perc_eval 
+             + cls_credits + bty_avg + pic_outfit + pic_color, data = evals)
+
+summary(m4)
+
+```
+<br>
+```{r fullmodel-selection4, eval = FALSE}
+m5 <- lm(score ~ gender + ethnicity + language + age + cls_perc_eval 
+             + cls_credits + bty_avg + pic_color, data = evals)
+
+summary(m5)
+
+```
+<br>
+
+The p-value for `cls_students` - the total number of students in the class - for the step when it was removed is (to 4 decimal places): `r fitb(0.3195)`
+
+<br>
+
+**Which variables have remained within the model? (Select and check multiple)**
+
+```{r, echo = FALSE}
+q_whichvar <- sample(c(
+         answer = "gender",
+         answer = "ethnicity",
+         answer = "language",
+         answer = "age",
+         answer = "cls_perc",
+         answer = "cls_credits",
+         answer = "bty_avg",
+         answer = "pic_color",
+         "cls_profs",
+         "cls_level",
+         "cls_students",
+         "rank",
+         "pic_outfit"
+)
+)
+```
+
+`r longmcq(q_whichvar)`
+
+<br>
+
+## **Exercise 9**
+
+Produce residual plots for the final model produced. Run code to produce the model again before creating the residual plots and call the model `finalmodel`.
+
+`r hide("Hint 1")`
+
+```{r hint9, eval = FALSE, echo = TRUE}
+finalmodel <- lm(???)
+
+summary(???)
+
+ggplot(data = ???, aes(???)) +
+  geom_point(color = "seagreen2") +
+  geom_hline(yintercept = 0, linetype = "dashed") +
+  xlab(???) +
+  ylab(???)
+
+ggplot(data = ???, aes(???)) +
+  geom_histogram(bins = 40, fill = "dodgerblue2") +
+  xlab(???)
+
+ggplot(data = ???, aes(???)) +
+  stat_qq() +
+  stat_qq_line(col = 2)
+```
+
+`r unhide()`
+
+`r hide("Hint 2")`
+
+```{r hint9_2, eval = FALSE, echo = TRUE}
+finalmodel <- lm(??? ~ ??? + ... + ???, data = ???)
+
+summary(???)
+
+ggplot(data = ???, aes(???)) +
+  geom_point(color = "seagreen2") +
+  geom_hline(yintercept = 0, linetype = "dashed") +
+  xlab("Fitted values") +
+  ylab("Residuals")
+
+ggplot(data = ???, aes(???)) +
+  geom_histogram(bins = 40, fill = "dodgerblue2") +
+  xlab("Residuals")
+
+ggplot(data = ???, aes(???)) +
+  stat_qq() +
+  stat_qq_line(col = 2)
+```
+
+`r unhide()`
+
+
+`r hide("Solution")`
+
+```{r sol9, eval = FALSE, echo = TRUE}
+finalmodel <- lm(score ~ gender + ethnicity + language + age + cls_perc_eval 
+             + cls_credits + bty_avg + pic_color, data = evals)
+
+summary(finalmodel)
+
+ggplot(data = finalmodel, aes(x = .fitted, y = .resid)) +
+  geom_point(color = "seagreen2") +
+  geom_hline(yintercept = 0, linetype = "dashed") +
+  xlab("Fitted values") +
+  ylab("Residuals")
+
+ggplot(data = finalmodel, aes(x = .resid)) +
+  geom_histogram(bins = 40, fill = "dodgerblue2") +
+  xlab("Residuals")
+
+ggplot(data = finalmodel, aes(sample = .resid)) +
+  stat_qq() +
+  stat_qq_line(col = 2)
+```
+
+`r unhide()`
+
+<br>
+
+Based on the final model, we can describe the characteristics of a lecturer and course at University of Texas at Austin that would be associated with a high evaluation score.
+
+The equation for this becomes:
+
+\[ 
+\begin{aligned}
+\text{score} &= 3.7719 + 0.2071 \text{ gender: male} + 0.1679 \text{ ethnicity: not minority} \\
+& - 0.2062 \text{ language non-english} - 0.0060 \text{ age} + 0.0047 \text{ Percent of students in class who completed evaluation} \\
+&+ 0.5053 \text{ Number of credits of class: one credit} + 0.0511 \text{ beauty average} \\
+& - 0.1906 \text{ Colour of lecturer's picture: colour}.
+\end{aligned}
+\]
+
+<br>
+
+**Would you be comfortable generalising your conclusions to apply to lecturers generally (at any university)?**
+
+```{r, echo = FALSE}
+q_comf <- sample(c(
+   answer = "Maybe",
+   "Yes",
+   "No"
+)
+)
+```
+
+`r longmcq(q_comf)`
+
+<br>
+
+**Should the R squared or adjusted R squared be used for model selection in this example?**
+
+```{r, echo = FALSE}
+q_name <- sample(c(
+   answer = "Adjusted R-squared",
+   "R-squared"
+)
+)
+```
+
+`r longmcq(q_name)`
+
+<br>

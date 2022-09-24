@@ -1,0 +1,138 @@
+# Simple Linear Regression
+
+<br>
+
+The fundamental phenomenon suggested by the study is that better looking teachers are evaluated more favorably. 
+The variable `bty_avg` is the average beauty rating of lecturer (where 1 is the lowest and 10 is the highest). Let's create a scatterplot of these variables to see if there appears to be a relationship:
+
+```{r scatter, eval = FALSE}
+ggplot(data = evals, aes(x = bty_avg, y = score)) +
+  geom_point(color = "salmon2")
+```
+
+Before we draw any conclusions from the plot we can re plot using `geom_jitter`.
+
+```{r scatter-jitter, eval = FALSE}
+ggplot(data = evals, aes(x = bty_avg, y = score)) +
+  geom_jitter(color = "skyblue2")
+```
+
+`geom_jitter` adds a small amount of random variation to the location of each point, it is a useful way of handling overplotting caused by discreteness in the data. 
+
+
+From the scatterplot there appears to be a (slight) positive relationship between evaluation score and average beauty. However, we can see if the apparent trend in the plot is something more than natural variation by fitting a linear model to predict average lecturer score by average beauty rating.
+    
+Add the line of the best fit model to your plot using the following:
+    
+```{r scatter-score-bty_avg-line-se, eval = FALSE}
+ggplot(data = evals, aes(x = bty_avg, y = score)) +
+  geom_jitter() +
+  geom_smooth(method = "lm")
+```
+
+`geom_smooth` aids in seeing patterns in the presence of overplotting. In the code above, it fits a linear model using `method = "lm"` and fits the line of best fit over the plot of `bty_avg` and `score`. The blue line is the model fitted. The shaded grey area around the line is called a "confidence band" and tells you about the variability you might expect in your predictions. To remove the confidence band, use `se = FALSE`.
+
+<br>
+
+**Does it appear that average beauty score is a predictor of lecture evaluation score?**
+
+```{r, echo = FALSE}
+q_avgb <- sample(c(
+   "No",
+   answer = "Yes"
+)
+)
+```
+
+`r longmcq(q_avgb)`
+
+<br>
+
+## **Exercise 3**
+
+Produce residual plots to evaluate whether the conditions of least squares regression are reasonable. 
+
+**Hint** Create a model object first, e.g. using `model1 <- lm(score ~ bty_avg, data = evals)`, then produce the plots.
+
+`r hide("Hint 1")`
+
+```{r hint3, eval = FALSE, echo = TRUE}
+model1 <- lm(???)
+
+ggplot(data = ???, aes(???)) +
+  geom_point(color = "seagreen2") +
+  geom_hline(???) +
+  xlab(???) +
+  ylab(???)
+
+ggplot(data = ???, aes(???)) +
+  geom_histogram(bins = 40, fill = "dodgerblue2") +
+  xlab(???)
+
+ggplot(data = ???, aes(???)) +
+  stat_qq() +
+  stat_qq_line(col = 2)
+```
+
+`r unhide()`
+
+`r hide("Hint 2")`
+
+```{r hint3_2, eval = FALSE, echo = TRUE}
+model1 <- lm(score ~ bty_avg, data = evals)
+
+ggplot(data = ???, aes(???)) +
+  geom_point(color = "seagreen2") +
+  geom_hline(???) +
+  xlab("Fitted values") +
+  ylab("Residuals")
+
+ggplot(data = ???, aes(???)) +
+  geom_histogram(bins = 40, fill = "dodgerblue2") +
+  xlab("Residuals")
+
+ggplot(data = ???, aes(???)) +
+  stat_qq() +
+  stat_qq_line(col = 2)
+```
+
+`r unhide()`
+
+
+`r hide("Solution")`
+
+```{r sol3, eval = FALSE, echo = TRUE}
+model1 <- lm(score ~ bty_avg, data = evals)
+
+ggplot(data = model1, aes(x = .fitted, y = .resid)) +
+  geom_point(color = "seagreen2") +
+  geom_hline(yintercept = 0, linetype = "dashed") +
+  xlab("Fitted values") +
+  ylab("Residuals")
+
+ggplot(data = model1, aes(x = .resid)) +
+  geom_histogram(bins = 40, fill = "dodgerblue2") +
+  xlab("Residuals")
+
+ggplot(data = model1, aes(sample = .resid)) +
+  stat_qq() +
+  stat_qq_line(col = 2)
+```
+
+`r unhide()`
+
+<br>
+
+**From the residuals, does it appear that the conditions of least squares regression are reasonable?**
+
+```{r, echo = FALSE}
+q_resid <- sample(c(
+   "No",
+   answer = "Yes"
+)
+)
+```
+
+`r longmcq(q_resid)`
+
+<br>

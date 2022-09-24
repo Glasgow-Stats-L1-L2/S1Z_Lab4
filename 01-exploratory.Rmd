@@ -1,0 +1,237 @@
+# Exploratory Data Analysis
+
+<br>
+
+```{r graphtrio, echo = FALSE, out.width = "25%", fig.cap = ""}
+knitr::include_graphics("images/lecturer.jpg")
+```
+
+<br>
+
+## Data
+
+Many university courses conclude by giving students the opportunity to evaluate the course and the instructor anonymously. However, the use of these student evaluations as an indicator of course quality and teaching effectiveness is often criticized because these measures may reflect the influence of non-teaching related characteristics, such as the physical appearance of the instructor. 
+
+The article titled, <a href="https://www.sciencedirect.com/science/article/pii/S0272775704001165?casa_token=3Zz3cupeQ8MAAAAA:8CMoSg5s3BgdhwM6oW9tjcWSZ-MkgYTGYitN4NxvRBAfHuKcmoPnTtzxAgOSURYpDYD8C5EDJg"> Beauty in the classroom: instructors' pulchritude and putative pedagogical productivity</a> by Hamermesh and Parker found that instructors who are viewed to be better looking receive higher instructional ratings. 
+
+In this lab we will analyze the data from this study in order to learn what goes into a positive lecturer evaluation.
+
+The data were gathered from end of semester student evaluations for a large sample of lecturers from the University of Texas at Austin. In addition, six students rated the lecturers' physical appearance. The result is a data frame where each row contains a different course/lecturer and columns represent variables about the courses and lecturers. 
+
+The data frame is called `evals` and is contained in the **openintro** package (you can read more about it <a href="https://www.openintro.org/data/index.php?data=evals"> here</a>). 
+
+We can view the first few lines of the data running the `head` function. 
+
+```{r head, eval = FALSE}
+head(evals)
+```
+
+It can be seen that the data contains 23 variables which we will explore to see if they have any relationship with the variable `score`, the evaluation score of each lecturer in each course (the "response" variable). These variables include both categorical and numerical types of variables.
+
+To find out more about each variable we can use the `help` function by running `?evals`.
+
+### Exploring the data
+
+Before we start to model the data, we need to understand the data and the different types of variables.
+
+<br>
+
+**What type of study design is this?**
+
+```{r, echo = FALSE}
+q_name1 <- sample(c(
+   "Experimental",
+   answer = "Observational"
+)
+)
+```
+
+`r longmcq(q_name1)`
+
+<br>
+
+### **Exercise 1**
+
+Plot the `score` variable using a histogram to investigate its distribution.  You can specify the colour of your plot by using the `fill = ...` argument (see  <a href="https://www.r-graph-gallery.com/42-colors-names.html"> here</a> for some colours with their names in **R**).
+
+`r hide("Hint")`
+
+```{r hint1, eval = FALSE, echo = TRUE}
+ggplot(data = ???, aes(???)) +
+  geom_histogram(???)
+```
+
+`r unhide()`
+
+
+`r hide("Solution")`
+
+```{r sol1, eval = FALSE, echo = TRUE}
+ggplot(data = evals, aes(x = score)) +
+  geom_histogram(fill = "violetred", bins = 40)
+```
+
+`r unhide()`
+
+<br>
+
+**Is the distribution skewed?**
+
+```{r, echo = FALSE}
+q_name <- sample(c(
+   "No",
+   answer = "Yes, left-skewed",
+   "Yes, right-skewed"
+)
+)
+```
+
+`r longmcq(q_name)`
+
+<br>
+
+
+### **Exercise 2**
+
+Create a boxplot of `score` against `rank` to explore any relationship.
+
+`r hide("Hint")`
+
+```{r hint2, eval = FALSE, echo = TRUE}
+ggplot(data = ???, aes(???)) +
+  geom_boxplot(???) +
+    coord_flip()
+```
+
+`r unhide()`
+
+
+`r hide("Solution")`
+
+```{r sol2, eval = FALSE, echo = TRUE}
+ggplot(data = evals, aes(x = score, y = rank)) +
+  geom_boxplot(fill = "steelblue2") + 
+    coord_flip()
+```
+
+`r unhide()`
+
+<br>
+
+**What are the values that are used when creating a boxplot? (There are multiple correct answers)**
+
+```{r, echo = FALSE}
+q_bxplt <- sample(c(
+         "Mean",
+         "Variance",
+         answer = "Minimum",
+         answer = "Maximum",
+         answer = "1st Quartile",
+         answer = "3rd Quartile",
+         "Mode",
+         answer = "Median",
+         "Standard Deviation"
+)
+)
+```
+
+`r longmcq(q_bxplt)`
+
+<br>
+
+**Which of the ranks corrensponds to the highest average score?**
+
+```{r, echo = FALSE}
+q_rank <- sample(c(
+         answer = "Teaching",
+         "Tenured",
+         "Tenure-track"
+)
+)
+```
+
+`r longmcq(q_rank)`
+
+<br>
+
+**Which of the boxplots has the largest spread?**
+
+```{r, echo = FALSE}
+q_spread <- sample(c(
+         "Teaching",
+         "Tenured",
+         answer = "Tenure-track"
+)
+)
+```
+
+`r longmcq(q_spread)`
+
+<br>
+
+Create a boxplot of `score` against `ethnicity` to explore any relationship, also using colours to distinguish between the different values of `gender`.
+
+`r hide("Hint")`
+
+```{r hintn, eval = FALSE, echo = TRUE}
+ggplot(data = ???, aes(???)) +
+  geom_boxplot(???)
+```
+
+`r unhide()`
+
+
+`r hide("Solution")`
+
+```{r soln, eval = FALSE, echo = TRUE}
+ggplot(data = evals, aes(x = ethnicity, y = score )) +
+  geom_boxplot(aes(fill = gender))
+```
+
+`r unhide()`
+
+<br>
+
+**Does it appear that different ethnic groups have a similar average score for both men and women?**
+
+```{r, echo = FALSE}
+q_eth <- sample(c(
+   "Yes",
+   answer = "No"
+)
+)
+```
+
+`r longmcq(q_eth)`
+
+<br>
+
+**Does it appear there is a effect for `gender` within the ethnicity variable?**
+
+```{r, echo = FALSE}
+q_gen <- sample(c(
+   "No",
+   answer = "Yes"
+)
+)
+```
+
+`r longmcq(q_gen)`
+
+<br>
+
+**Which boxplot would you think has the greatest variablility?**
+
+```{r, echo = FALSE}
+q_bxvr <- sample(c(
+         answer = "Not Minority Ethnicity Female",
+         "Not Minority Ethnicity Male",
+         "Minority Ethnicity Male",
+         "Minority Ethnicity Female"
+)
+)
+```
+
+`r longmcq(q_bxvr)`
+
+<br>

@@ -1,0 +1,31 @@
+# Collinearity 
+
+<br>
+
+The data set contains several variables on the beauty score of the lecturer: individual ratings from each of the six students who were asked to score the physical appearance of the lecturers and the average of these six scores. Let's take a look at the relationship between one of these scores and the average beauty score.
+
+```{r bty-rel, eval = FALSE}
+ggplot(data = evals, aes(x = bty_f1lower, y = bty_avg)) +
+  geom_point(color = "slateblue2")
+
+evals %>% 
+  summarise(cor(bty_avg, bty_f1lower))
+```
+
+The variable `bty_f1lower` is the beauty ratings of the lecturers by the first female student from a lower level course.
+
+As expected, the relationship is quite strong---after all, the average score is calculated using the individual scores. We can look at the relationships between all beauty variables (columns 13 through 19) using the following command:
+
+```{r bty-rels, eval = FALSE}
+evals %>%
+  select(contains("bty")) %>%
+  ggpairs(., lower = list(continuous = wrap("points", size=0.1)))
+```
+
+These predictor variables are collinear (correlated), and adding more than one of these variables to the model would not add much value to the model. Review Section 9.1.2 OpenIntro to read more about collinearity <a href="https://www.openintro.org/redirect.php?go=os4_tablet&referrer=/stat/os4.php#page=348" target="_blank">OpenIntro Page 348</a>. The plot shows the correlation between each pair of variables which also can be seen that each pair is over 0.5. 
+
+
+In this application and with these highly-correlated predictors, it is reasonable to use the average beauty score as the single representative of these variables. 
+By reducing the 7 columns to just 1 removes some correlation between the variables making it easier to investigate any relationships with our response `score`. 
+
+<br>

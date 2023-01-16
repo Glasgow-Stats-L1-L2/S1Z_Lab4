@@ -2,7 +2,7 @@
 # Group Exercise
 
 <br>
-
+The group exercise will use the `evals` data that we have used throughout this lab.
 Ensure that you have the following packages installed and loaded: 
 
 ```{r load-packages2, eval = FALSE}
@@ -19,7 +19,7 @@ library(broom)
 
 <br>
 
-1. Create a boxplot of `language` against `score` with colour for `gender`.
+1. Create a boxplot of `language` against `score` split by `gender`.
 
 <br>
 

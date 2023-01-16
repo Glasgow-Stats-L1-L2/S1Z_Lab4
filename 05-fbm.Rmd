@@ -152,7 +152,7 @@ q_whichvar <- sample(c(
          answer = "ethnicity",
          answer = "language",
          answer = "age",
-         answer = "cls_perc",
+         answer = "cls_perc_eval",
          answer = "cls_credits",
          answer = "bty_avg",
          answer = "pic_color",

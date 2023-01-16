@@ -6,11 +6,10 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>3 Simple Linear Regression | S1Z Lab 4</title>
   <meta name="description" content="3 Simple Linear Regression | S1Z Lab 4" />
-  <meta name="generator" content="bookdown 0.22 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.31 and GitBook 2.6.7" />
 
   <meta property="og:title" content="3 Simple Linear Regression | S1Z Lab 4" />
   <meta property="og:type" content="book" />
-  
   
   
   
@@ -31,8 +30,8 @@
   
 <link rel="prev" href="exploratory-data-analysis.html"/>
 <link rel="next" href="collinearity.html"/>
-<script src="libs/header-attrs-2.16/header-attrs.js"></script>
-<script src="libs/jquery-2.2.3/jquery.min.js"></script>
+<script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
@@ -40,7 +39,6 @@
 <link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
-
 
 
 
@@ -92,7 +90,7 @@ code span.al { color: #ff0000; font-weight: bold; } /* Alert */
 code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
 code span.at { color: #7d9029; } /* Attribute */
 code span.bn { color: #40a070; } /* BaseN */
-code span.bu { } /* BuiltIn */
+code span.bu { color: #008000; } /* BuiltIn */
 code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
 code span.ch { color: #4070a0; } /* Char */
 code span.cn { color: #880000; } /* Constant */
@@ -105,7 +103,7 @@ code span.er { color: #ff0000; font-weight: bold; } /* Error */
 code span.ex { } /* Extension */
 code span.fl { color: #40a070; } /* Float */
 code span.fu { color: #06287e; } /* Function */
-code span.im { } /* Import */
+code span.im { color: #008000; font-weight: bold; } /* Import */
 code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
 code span.kw { color: #007020; font-weight: bold; } /* Keyword */
 code span.op { color: #666666; } /* Operator */
@@ -134,41 +132,41 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
       <nav role="navigation">
 
 <ul class="summary">
-<li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> Welcome to S1Z Lab 4<span></span></a>
+<li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> Welcome to S1Z Lab 4</a>
 <ul>
-<li class="chapter" data-level="1.1" data-path="index.html"><a href="index.html#intended-learning-outcomes"><i class="fa fa-check"></i><b>1.1</b> Intended Learning Outcomes<span></span></a></li>
+<li class="chapter" data-level="1.1" data-path="index.html"><a href="index.html#intended-learning-outcomes"><i class="fa fa-check"></i><b>1.1</b> Intended Learning Outcomes</a></li>
 </ul></li>
-<li class="chapter" data-level="2" data-path="exploratory-data-analysis.html"><a href="exploratory-data-analysis.html"><i class="fa fa-check"></i><b>2</b> Exploratory Data Analysis<span></span></a>
+<li class="chapter" data-level="2" data-path="exploratory-data-analysis.html"><a href="exploratory-data-analysis.html"><i class="fa fa-check"></i><b>2</b> Exploratory Data Analysis</a>
 <ul>
-<li class="chapter" data-level="2.1" data-path="exploratory-data-analysis.html"><a href="exploratory-data-analysis.html#data"><i class="fa fa-check"></i><b>2.1</b> Data<span></span></a>
+<li class="chapter" data-level="2.1" data-path="exploratory-data-analysis.html"><a href="exploratory-data-analysis.html#data"><i class="fa fa-check"></i><b>2.1</b> Data</a>
 <ul>
-<li class="chapter" data-level="2.1.1" data-path="exploratory-data-analysis.html"><a href="exploratory-data-analysis.html#exploring-the-data"><i class="fa fa-check"></i><b>2.1.1</b> Exploring the data<span></span></a></li>
-<li class="chapter" data-level="2.1.2" data-path="exploratory-data-analysis.html"><a href="exploratory-data-analysis.html#exercise-1"><i class="fa fa-check"></i><b>2.1.2</b> <strong>Exercise 1</strong><span></span></a></li>
-<li class="chapter" data-level="2.1.3" data-path="exploratory-data-analysis.html"><a href="exploratory-data-analysis.html#exercise-2"><i class="fa fa-check"></i><b>2.1.3</b> <strong>Exercise 2</strong><span></span></a></li>
+<li class="chapter" data-level="2.1.1" data-path="exploratory-data-analysis.html"><a href="exploratory-data-analysis.html#exploring-the-data"><i class="fa fa-check"></i><b>2.1.1</b> Exploring the data</a></li>
+<li class="chapter" data-level="2.1.2" data-path="exploratory-data-analysis.html"><a href="exploratory-data-analysis.html#exercise-1"><i class="fa fa-check"></i><b>2.1.2</b> <strong>Exercise 1</strong></a></li>
+<li class="chapter" data-level="2.1.3" data-path="exploratory-data-analysis.html"><a href="exploratory-data-analysis.html#exercise-2"><i class="fa fa-check"></i><b>2.1.3</b> <strong>Exercise 2</strong></a></li>
 </ul></li>
 </ul></li>
-<li class="chapter" data-level="3" data-path="simple-linear-regression.html"><a href="simple-linear-regression.html"><i class="fa fa-check"></i><b>3</b> Simple Linear Regression<span></span></a>
+<li class="chapter" data-level="3" data-path="simple-linear-regression.html"><a href="simple-linear-regression.html"><i class="fa fa-check"></i><b>3</b> Simple Linear Regression</a>
 <ul>
-<li class="chapter" data-level="3.1" data-path="simple-linear-regression.html"><a href="simple-linear-regression.html#exercise-3"><i class="fa fa-check"></i><b>3.1</b> <strong>Exercise 3</strong><span></span></a></li>
+<li class="chapter" data-level="3.1" data-path="simple-linear-regression.html"><a href="simple-linear-regression.html#exercise-3"><i class="fa fa-check"></i><b>3.1</b> <strong>Exercise 3</strong></a></li>
 </ul></li>
-<li class="chapter" data-level="4" data-path="collinearity.html"><a href="collinearity.html"><i class="fa fa-check"></i><b>4</b> Collinearity<span></span></a></li>
-<li class="chapter" data-level="5" data-path="multiple-predictors.html"><a href="multiple-predictors.html"><i class="fa fa-check"></i><b>5</b> Multiple Predictors<span></span></a>
+<li class="chapter" data-level="4" data-path="collinearity.html"><a href="collinearity.html"><i class="fa fa-check"></i><b>4</b> Collinearity</a></li>
+<li class="chapter" data-level="5" data-path="multiple-predictors.html"><a href="multiple-predictors.html"><i class="fa fa-check"></i><b>5</b> Multiple Predictors</a>
 <ul>
-<li class="chapter" data-level="5.1" data-path="multiple-predictors.html"><a href="multiple-predictors.html#exercise-4"><i class="fa fa-check"></i><b>5.1</b> <strong>Exercise 4</strong><span></span></a></li>
-<li class="chapter" data-level="5.2" data-path="multiple-predictors.html"><a href="multiple-predictors.html#interpretation-of-a-categorical-variable-with-2-levels"><i class="fa fa-check"></i><b>5.2</b> Interpretation of a Categorical Variable with 2 levels<span></span></a>
+<li class="chapter" data-level="5.1" data-path="multiple-predictors.html"><a href="multiple-predictors.html#exercise-4"><i class="fa fa-check"></i><b>5.1</b> <strong>Exercise 4</strong></a></li>
+<li class="chapter" data-level="5.2" data-path="multiple-predictors.html"><a href="multiple-predictors.html#interpretation-of-a-categorical-variable-with-2-levels"><i class="fa fa-check"></i><b>5.2</b> Interpretation of a Categorical Variable with 2 levels</a>
 <ul>
-<li class="chapter" data-level="5.2.1" data-path="multiple-predictors.html"><a href="multiple-predictors.html#exercise-5"><i class="fa fa-check"></i><b>5.2.1</b> <strong>Exercise 5</strong><span></span></a></li>
+<li class="chapter" data-level="5.2.1" data-path="multiple-predictors.html"><a href="multiple-predictors.html#exercise-5"><i class="fa fa-check"></i><b>5.2.1</b> <strong>Exercise 5</strong></a></li>
 </ul></li>
-<li class="chapter" data-level="5.3" data-path="multiple-predictors.html"><a href="multiple-predictors.html#interpretation-of-a-categorical-variable-with-more-than-2-levels"><i class="fa fa-check"></i><b>5.3</b> Interpretation of a Categorical Variable with more than 2 levels<span></span></a></li>
+<li class="chapter" data-level="5.3" data-path="multiple-predictors.html"><a href="multiple-predictors.html#interpretation-of-a-categorical-variable-with-more-than-2-levels"><i class="fa fa-check"></i><b>5.3</b> Interpretation of a Categorical Variable with more than 2 levels</a></li>
 </ul></li>
-<li class="chapter" data-level="6" data-path="finding-the-best-model.html"><a href="finding-the-best-model.html"><i class="fa fa-check"></i><b>6</b> Finding the Best Model<span></span></a>
+<li class="chapter" data-level="6" data-path="finding-the-best-model.html"><a href="finding-the-best-model.html"><i class="fa fa-check"></i><b>6</b> Finding the Best Model</a>
 <ul>
-<li class="chapter" data-level="6.1" data-path="finding-the-best-model.html"><a href="finding-the-best-model.html#exercise-6"><i class="fa fa-check"></i><b>6.1</b> <strong>Exercise 6</strong><span></span></a></li>
-<li class="chapter" data-level="6.2" data-path="finding-the-best-model.html"><a href="finding-the-best-model.html#exercise-7"><i class="fa fa-check"></i><b>6.2</b> <strong>Exercise 7</strong><span></span></a></li>
-<li class="chapter" data-level="6.3" data-path="finding-the-best-model.html"><a href="finding-the-best-model.html#exercise-8"><i class="fa fa-check"></i><b>6.3</b> <strong>Exercise 8</strong><span></span></a></li>
-<li class="chapter" data-level="6.4" data-path="finding-the-best-model.html"><a href="finding-the-best-model.html#exercise-9"><i class="fa fa-check"></i><b>6.4</b> <strong>Exercise 9</strong><span></span></a></li>
+<li class="chapter" data-level="6.1" data-path="finding-the-best-model.html"><a href="finding-the-best-model.html#exercise-6"><i class="fa fa-check"></i><b>6.1</b> <strong>Exercise 6</strong></a></li>
+<li class="chapter" data-level="6.2" data-path="finding-the-best-model.html"><a href="finding-the-best-model.html#exercise-7"><i class="fa fa-check"></i><b>6.2</b> <strong>Exercise 7</strong></a></li>
+<li class="chapter" data-level="6.3" data-path="finding-the-best-model.html"><a href="finding-the-best-model.html#exercise-8"><i class="fa fa-check"></i><b>6.3</b> <strong>Exercise 8</strong></a></li>
+<li class="chapter" data-level="6.4" data-path="finding-the-best-model.html"><a href="finding-the-best-model.html#exercise-9"><i class="fa fa-check"></i><b>6.4</b> <strong>Exercise 9</strong></a></li>
 </ul></li>
-<li class="chapter" data-level="7" data-path="group-exercise.html"><a href="group-exercise.html"><i class="fa fa-check"></i><b>7</b> Group Exercise<span></span></a></li>
+<li class="chapter" data-level="7" data-path="group-exercise.html"><a href="group-exercise.html"><i class="fa fa-check"></i><b>7</b> Group Exercise</a></li>
 </ul>
 
       </nav>
@@ -189,7 +187,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div id="simple-linear-regression" class="section level1 hasAnchor" number="3">
 <h1><span class="header-section-number">3</span> Simple Linear Regression<a href="simple-linear-regression.html#simple-linear-regression" class="anchor-section" aria-label="Anchor link to header"></a></h1>
 <p><br></p>
-<p>The fundamental phenomenon suggested by the study is that better looking teachers are evaluated more favorably.
+<p>The fundamental phenomenon suggested by the study is that better looking teachers are evaluated more favourably.
 The variable <code>bty_avg</code> is the average beauty rating of lecturer (where 1 is the lowest and 10 is the highest). Let's create a scatterplot of these variables to see if there appears to be a relationship:</p>
 <div class="sourceCode" id="cb9"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb9-1"><a href="simple-linear-regression.html#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> evals, <span class="fu">aes</span>(<span class="at">x =</span> bty_avg, <span class="at">y =</span> score)) <span class="sc">+</span></span>
 <span id="cb9-2"><a href="simple-linear-regression.html#cb9-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="at">color =</span> <span class="st">&quot;salmon2&quot;</span>)</span></code></pre></div>
@@ -205,8 +203,8 @@ The variable <code>bty_avg</code> is the average beauty rating of lecturer (wher
 <p><code>geom_smooth</code> aids in seeing patterns in the presence of overplotting. In the code above, it fits a linear model using <code>method = "lm"</code> and fits the line of best fit over the plot of <code>bty_avg</code> and <code>score</code>. The blue line is the model fitted. The shaded grey area around the line is called a "confidence band" and tells you about the variability you might expect in your predictions. To remove the confidence band, use <code>se = FALSE</code>.</p>
 <p><br></p>
 <p><strong>Does it appear that average beauty score is a predictor of lecture evaluation score?</strong></p>
-<div id="radio_UUABNLHLDC" class="webex-radiogroup">
-<label><input type="radio" autocomplete="off" name="radio_UUABNLHLDC" value=""></input> <span>No</span></label><label><input type="radio" autocomplete="off" name="radio_UUABNLHLDC" value="answer"></input> <span>Yes</span></label>
+<div id="radio_NFKSDYYVSZ" class="webex-radiogroup">
+<label><input type="radio" autocomplete="off" name="radio_NFKSDYYVSZ" value=""></input> <span>No</span></label><label><input type="radio" autocomplete="off" name="radio_NFKSDYYVSZ" value="answer"></input> <span>Yes</span></label>
 </div>
 <p><br></p>
 <div id="exercise-3" class="section level2 hasAnchor" number="3.1">
@@ -275,8 +273,8 @@ Solution
 </div>
 <p><br></p>
 <p><strong>From the residuals, does it appear that the conditions of least squares regression are reasonable?</strong></p>
-<div id="radio_VWQCRAVEWW" class="webex-radiogroup">
-<label><input type="radio" autocomplete="off" name="radio_VWQCRAVEWW" value=""></input> <span>No</span></label><label><input type="radio" autocomplete="off" name="radio_VWQCRAVEWW" value="answer"></input> <span>Yes</span></label>
+<div id="radio_KJESGHZINR" class="webex-radiogroup">
+<label><input type="radio" autocomplete="off" name="radio_KJESGHZINR" value="answer"></input> <span>Yes, since the residuals are scattered evenly above and below the zero line and while neither the histogram nor the QQ-plot are perfect, they both look adequate to show the residuals are approximately normally distributed.</span></label><label><input type="radio" autocomplete="off" name="radio_KJESGHZINR" value=""></input> <span>No, since the residuals aren't scattered evenly above and below the zero line, the histogram does not look bell shaped and centred at zero since and many of the QQ-plot points are very far from the line</span></label>
 </div>
 <p><br></p>
 
@@ -463,7 +461,6 @@ window.onload = function() {
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
-<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
 <script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
 <script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
 <script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
@@ -500,6 +497,10 @@ gitbook.start({
 "text": null
 },
 "download": ["main.pdf", "main.epub"],
+"search": {
+"engine": "fuse",
+"options": null
+},
 "toc": {
 "collapse": "section",
 "scroll_highlight": true
@@ -515,7 +516,7 @@ gitbook.start({
     var script = document.createElement("script");
     script.type = "text/javascript";
     var src = "true";
-    if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (src === "" || src === "true") src = "https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/latest.js?config=TeX-MML-AM_CHTML";
     if (location.protocol !== "file:")
       if (/^https?:/.test(src))
         src = src.replace(/^https?:/, '');

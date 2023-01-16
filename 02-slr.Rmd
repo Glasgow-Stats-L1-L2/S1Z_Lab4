@@ -2,7 +2,7 @@
 
 <br>
 
-The fundamental phenomenon suggested by the study is that better looking teachers are evaluated more favorably. 
+The fundamental phenomenon suggested by the study is that better looking teachers are evaluated more favourably. 
 The variable `bty_avg` is the average beauty rating of lecturer (where 1 is the lowest and 10 is the highest). Let's create a scatterplot of these variables to see if there appears to be a relationship:
 
 ```{r scatter, eval = FALSE}
@@ -127,8 +127,8 @@ ggplot(data = model1, aes(sample = .resid)) +
 
 ```{r, echo = FALSE}
 q_resid <- sample(c(
-   "No",
-   answer = "Yes"
+   "No, since the residuals aren't scattered evenly above and below the zero line, the histogram does not look bell shaped and centred at zero since and many of the QQ-plot points are very far from the line",
+   answer = "Yes, since the residuals are scattered evenly above and below the zero line and while neither the histogram nor the QQ-plot are perfect, they both look adequate to show the residuals are approximately normally distributed."
 )
 )
 ```

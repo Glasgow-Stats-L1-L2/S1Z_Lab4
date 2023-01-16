@@ -20,9 +20,10 @@ The data were gathered from end of semester student evaluations for a large samp
 
 The data frame is called `evals` and is contained in the **openintro** package (you can read more about it <a href="https://www.openintro.org/data/index.php?data=evals"> here</a>). 
 
-We can view the first few lines of the data running the `head` function. 
+We can load the data and view the first few lines of the data by running the code below. 
 
 ```{r head, eval = FALSE}
+data('evals', package='openintro')
 head(evals)
 ```
 
@@ -93,7 +94,7 @@ q_name <- sample(c(
 
 ### **Exercise 2**
 
-Create a boxplot of `score` against `rank` to explore any relationship.
+Create a boxplot of `score` against `rank` to explore any relationship between the professor evaluation  score and rank of professor based on academic appointment categories applied in the U.S. and Canada. The `rank` variable can take three values, `teaching`, `tenure track` and `tenure`, where teaching professors are generally the most junior, and tenured professors are the most senior.
 
 `r hide("Hint")`
 
@@ -154,7 +155,7 @@ q_rank <- sample(c(
 
 <br>
 
-**Which of the boxplots has the largest spread?**
+**Which of the boxplots has the largest spread (based on the IQR)?**
 
 ```{r, echo = FALSE}
 q_spread <- sample(c(

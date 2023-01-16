@@ -91,8 +91,8 @@ ggplot(data = model2, aes(sample = .resid)) +
 
 ```{r, echo = FALSE}
 q_resid2 <- sample(c(
-   "No",
-   answer = "Yes"
+   "No, since the residuals aren't scattered evenly above and below the zero line, the histogram does not look bell shaped and centred at zero since and many of the QQ-plot points are very far from the line",
+   answer = "Yes, since the residuals are scattered evenly above and below the zero line and while neither the histogram nor the QQ-plot are perfect, they both look adequate to show the residuals are approximately normally distributed."
 )
 )
 ```
@@ -133,8 +133,8 @@ q_genadd <- sample(c(
 
 ```{r, echo = FALSE}
 q_addfit <- sample(c(
-   "No",
-   answer = "Yes"
+   "No, since the R-squared value has decreased.",
+   answer = "Yes, since the R-sqaured value has increased."
 )
 )
 ```
@@ -143,7 +143,7 @@ q_addfit <- sample(c(
 
 <br>
 
-*Note* the estimate for `gender` is now called `gendermale` in `model2` above. We can see this name change whenever we introduce a categorical variable. The reason is that R re-codes `gender` from having the values of `male` and `female` to being an indicator variable called `gendermale` that takes a value of $0$ for female lecturers and a value of $1$ for male lecturers. (Such variables are often referred to as "dummy" variables).  The fitted model (`model2`) is therefore:
+*Note* the estimate for `gender` is now called `gendermale` in `model2` summary above. We can see this name change whenever we introduce a categorical variable. The reason is that R re-codes `gender` from having the values of `male` and `female` to being an indicator variable called `gendermale` that takes a value of $0$ for female lecturers and a value of $1$ for male lecturers. (Such variables are often referred to as "dummy" variables).  The fitted model (`model2`) is therefore:
 
 \[
 \begin{aligned}

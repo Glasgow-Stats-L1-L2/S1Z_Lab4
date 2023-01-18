@@ -54,17 +54,15 @@ This lab covers material in <a href="https://www.openintro.org/redirect.php?go=o
 
 We will explore and visualise the data using the **tidyverse** suite of packages and analyse data contained in the **openintro** package.  We will use the **GGally** package to access the function `ggpairs` which produces a plot for each variable against each other displayed on one plot.
 
-You'll need to ensure you have the following packages installed and loaded: 
+To run the code that appears in the consoles in this lab start by loading these packages.
 
-```{r load-packages, eval = FALSE}
-install.packages("tidyverse")
-install.packages("openintro")
-install.packages("GGally")
-install.packages("broom")
-
+```{r load-packages, echo=TRUE, eval=FALSE}
 library(tidyverse)
 library(openintro)
 library(GGally)
 library(broom)
 ```
+
+To run the code that appears in the consoles in this lab in **your own version of RStudio**, make sure the packages above are installed. You can install packages using the `install.packages("package name")` command. For example, to install `tidyverse` you should run the line `install.packages("tidyverse")`.
+
 

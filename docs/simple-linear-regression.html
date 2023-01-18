@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>3 Simple Linear Regression | S1Z Lab 4</title>
   <meta name="description" content="3 Simple Linear Regression | S1Z Lab 4" />
-  <meta name="generator" content="bookdown 0.31 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.30 and GitBook 2.6.7" />
 
   <meta property="og:title" content="3 Simple Linear Regression | S1Z Lab 4" />
   <meta property="og:type" content="book" />
@@ -47,24 +47,25 @@
 
 
 
+<script src="libs/accessible-code-block-0.0.1/empty-anchor.js"></script>
 <link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
 <link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
 <script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
 
 
 <style type="text/css">
-pre > code.sourceCode { white-space: pre; position: relative; }
-pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
-pre > code.sourceCode > span:empty { height: 1.2em; }
-.sourceCode { overflow: visible; }
+code.sourceCode > span { display: inline-block; line-height: 1.25; }
 code.sourceCode > span { color: inherit; text-decoration: inherit; }
+code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode { white-space: pre; position: relative; }
 pre.sourceCode { margin: 0; }
 @media screen {
 div.sourceCode { overflow: auto; }
 }
 @media print {
-pre > code.sourceCode { white-space: pre-wrap; }
-pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+code.sourceCode { white-space: pre-wrap; }
+code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
 }
 pre.numberSource code
   { counter-reset: source-line 0; }
@@ -84,13 +85,13 @@ pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-le
 div.sourceCode
   {   }
 @media screen {
-pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
 code span.al { color: #ff0000; font-weight: bold; } /* Alert */
 code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
 code span.at { color: #7d9029; } /* Attribute */
 code span.bn { color: #40a070; } /* BaseN */
-code span.bu { color: #008000; } /* BuiltIn */
+code span.bu { } /* BuiltIn */
 code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
 code span.ch { color: #4070a0; } /* Char */
 code span.cn { color: #880000; } /* Constant */
@@ -103,7 +104,7 @@ code span.er { color: #ff0000; font-weight: bold; } /* Error */
 code span.ex { } /* Extension */
 code span.fl { color: #40a070; } /* Float */
 code span.fu { color: #06287e; } /* Function */
-code span.im { color: #008000; font-weight: bold; } /* Import */
+code span.im { } /* Import */
 code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
 code span.kw { color: #007020; font-weight: bold; } /* Keyword */
 code span.op { color: #666666; } /* Operator */
@@ -132,35 +133,28 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
       <nav role="navigation">
 
 <ul class="summary">
-<li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> Welcome to S1Z Lab 4</a>
-<ul>
+<li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> Welcome to S1Z Lab 4</a><ul>
 <li class="chapter" data-level="1.1" data-path="index.html"><a href="index.html#intended-learning-outcomes"><i class="fa fa-check"></i><b>1.1</b> Intended Learning Outcomes</a></li>
 </ul></li>
-<li class="chapter" data-level="2" data-path="exploratory-data-analysis.html"><a href="exploratory-data-analysis.html"><i class="fa fa-check"></i><b>2</b> Exploratory Data Analysis</a>
-<ul>
-<li class="chapter" data-level="2.1" data-path="exploratory-data-analysis.html"><a href="exploratory-data-analysis.html#data"><i class="fa fa-check"></i><b>2.1</b> Data</a>
-<ul>
+<li class="chapter" data-level="2" data-path="exploratory-data-analysis.html"><a href="exploratory-data-analysis.html"><i class="fa fa-check"></i><b>2</b> Exploratory Data Analysis</a><ul>
+<li class="chapter" data-level="2.1" data-path="exploratory-data-analysis.html"><a href="exploratory-data-analysis.html#data"><i class="fa fa-check"></i><b>2.1</b> Data</a><ul>
 <li class="chapter" data-level="2.1.1" data-path="exploratory-data-analysis.html"><a href="exploratory-data-analysis.html#exploring-the-data"><i class="fa fa-check"></i><b>2.1.1</b> Exploring the data</a></li>
 <li class="chapter" data-level="2.1.2" data-path="exploratory-data-analysis.html"><a href="exploratory-data-analysis.html#exercise-1"><i class="fa fa-check"></i><b>2.1.2</b> <strong>Exercise 1</strong></a></li>
 <li class="chapter" data-level="2.1.3" data-path="exploratory-data-analysis.html"><a href="exploratory-data-analysis.html#exercise-2"><i class="fa fa-check"></i><b>2.1.3</b> <strong>Exercise 2</strong></a></li>
 </ul></li>
 </ul></li>
-<li class="chapter" data-level="3" data-path="simple-linear-regression.html"><a href="simple-linear-regression.html"><i class="fa fa-check"></i><b>3</b> Simple Linear Regression</a>
-<ul>
+<li class="chapter" data-level="3" data-path="simple-linear-regression.html"><a href="simple-linear-regression.html"><i class="fa fa-check"></i><b>3</b> Simple Linear Regression</a><ul>
 <li class="chapter" data-level="3.1" data-path="simple-linear-regression.html"><a href="simple-linear-regression.html#exercise-3"><i class="fa fa-check"></i><b>3.1</b> <strong>Exercise 3</strong></a></li>
 </ul></li>
 <li class="chapter" data-level="4" data-path="collinearity.html"><a href="collinearity.html"><i class="fa fa-check"></i><b>4</b> Collinearity</a></li>
-<li class="chapter" data-level="5" data-path="multiple-predictors.html"><a href="multiple-predictors.html"><i class="fa fa-check"></i><b>5</b> Multiple Predictors</a>
-<ul>
+<li class="chapter" data-level="5" data-path="multiple-predictors.html"><a href="multiple-predictors.html"><i class="fa fa-check"></i><b>5</b> Multiple Predictors</a><ul>
 <li class="chapter" data-level="5.1" data-path="multiple-predictors.html"><a href="multiple-predictors.html#exercise-4"><i class="fa fa-check"></i><b>5.1</b> <strong>Exercise 4</strong></a></li>
-<li class="chapter" data-level="5.2" data-path="multiple-predictors.html"><a href="multiple-predictors.html#interpretation-of-a-categorical-variable-with-2-levels"><i class="fa fa-check"></i><b>5.2</b> Interpretation of a Categorical Variable with 2 levels</a>
-<ul>
+<li class="chapter" data-level="5.2" data-path="multiple-predictors.html"><a href="multiple-predictors.html#interpretation-of-a-categorical-variable-with-2-levels"><i class="fa fa-check"></i><b>5.2</b> Interpretation of a Categorical Variable with 2 levels</a><ul>
 <li class="chapter" data-level="5.2.1" data-path="multiple-predictors.html"><a href="multiple-predictors.html#exercise-5"><i class="fa fa-check"></i><b>5.2.1</b> <strong>Exercise 5</strong></a></li>
 </ul></li>
 <li class="chapter" data-level="5.3" data-path="multiple-predictors.html"><a href="multiple-predictors.html#interpretation-of-a-categorical-variable-with-more-than-2-levels"><i class="fa fa-check"></i><b>5.3</b> Interpretation of a Categorical Variable with more than 2 levels</a></li>
 </ul></li>
-<li class="chapter" data-level="6" data-path="finding-the-best-model.html"><a href="finding-the-best-model.html"><i class="fa fa-check"></i><b>6</b> Finding the Best Model</a>
-<ul>
+<li class="chapter" data-level="6" data-path="finding-the-best-model.html"><a href="finding-the-best-model.html"><i class="fa fa-check"></i><b>6</b> Finding the Best Model</a><ul>
 <li class="chapter" data-level="6.1" data-path="finding-the-best-model.html"><a href="finding-the-best-model.html#exercise-6"><i class="fa fa-check"></i><b>6.1</b> <strong>Exercise 6</strong></a></li>
 <li class="chapter" data-level="6.2" data-path="finding-the-best-model.html"><a href="finding-the-best-model.html#exercise-7"><i class="fa fa-check"></i><b>6.2</b> <strong>Exercise 7</strong></a></li>
 <li class="chapter" data-level="6.3" data-path="finding-the-best-model.html"><a href="finding-the-best-model.html#exercise-8"><i class="fa fa-check"></i><b>6.3</b> <strong>Exercise 8</strong></a></li>
@@ -184,30 +178,30 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="simple-linear-regression" class="section level1 hasAnchor" number="3">
+<div id="simple-linear-regression" class="section level1 hasAnchor">
 <h1><span class="header-section-number">3</span> Simple Linear Regression<a href="simple-linear-regression.html#simple-linear-regression" class="anchor-section" aria-label="Anchor link to header"></a></h1>
 <p><br></p>
 <p>The fundamental phenomenon suggested by the study is that better looking teachers are evaluated more favourably.
 The variable <code>bty_avg</code> is the average beauty rating of lecturer (where 1 is the lowest and 10 is the highest). Let's create a scatterplot of these variables to see if there appears to be a relationship:</p>
-<div class="sourceCode" id="cb9"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb9-1"><a href="simple-linear-regression.html#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> evals, <span class="fu">aes</span>(<span class="at">x =</span> bty_avg, <span class="at">y =</span> score)) <span class="sc">+</span></span>
-<span id="cb9-2"><a href="simple-linear-regression.html#cb9-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="at">color =</span> <span class="st">&quot;salmon2&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb9"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb9-1"><a href="simple-linear-regression.html#cb9-1"></a><span class="kw">ggplot</span>(<span class="dt">data =</span> evals, <span class="kw">aes</span>(<span class="dt">x =</span> bty_avg, <span class="dt">y =</span> score)) <span class="op">+</span></span>
+<span id="cb9-2"><a href="simple-linear-regression.html#cb9-2"></a><span class="st">  </span><span class="kw">geom_point</span>(<span class="dt">color =</span> <span class="st">&quot;salmon2&quot;</span>)</span></code></pre></div>
 <p>Before we draw any conclusions from the plot we can re plot using <code>geom_jitter</code>.</p>
-<div class="sourceCode" id="cb10"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb10-1"><a href="simple-linear-regression.html#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> evals, <span class="fu">aes</span>(<span class="at">x =</span> bty_avg, <span class="at">y =</span> score)) <span class="sc">+</span></span>
-<span id="cb10-2"><a href="simple-linear-regression.html#cb10-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_jitter</span>(<span class="at">color =</span> <span class="st">&quot;skyblue2&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb10"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb10-1"><a href="simple-linear-regression.html#cb10-1"></a><span class="kw">ggplot</span>(<span class="dt">data =</span> evals, <span class="kw">aes</span>(<span class="dt">x =</span> bty_avg, <span class="dt">y =</span> score)) <span class="op">+</span></span>
+<span id="cb10-2"><a href="simple-linear-regression.html#cb10-2"></a><span class="st">  </span><span class="kw">geom_jitter</span>(<span class="dt">color =</span> <span class="st">&quot;skyblue2&quot;</span>)</span></code></pre></div>
 <p><code>geom_jitter</code> adds a small amount of random variation to the location of each point, it is a useful way of handling overplotting caused by discreteness in the data.</p>
 <p>From the scatterplot there appears to be a (slight) positive relationship between evaluation score and average beauty. However, we can see if the apparent trend in the plot is something more than natural variation by fitting a linear model to predict average lecturer score by average beauty rating.</p>
 <p>Add the line of the best fit model to your plot using the following:</p>
-<div class="sourceCode" id="cb11"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb11-1"><a href="simple-linear-regression.html#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> evals, <span class="fu">aes</span>(<span class="at">x =</span> bty_avg, <span class="at">y =</span> score)) <span class="sc">+</span></span>
-<span id="cb11-2"><a href="simple-linear-regression.html#cb11-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_jitter</span>() <span class="sc">+</span></span>
-<span id="cb11-3"><a href="simple-linear-regression.html#cb11-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_smooth</span>(<span class="at">method =</span> <span class="st">&quot;lm&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb11"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb11-1"><a href="simple-linear-regression.html#cb11-1"></a><span class="kw">ggplot</span>(<span class="dt">data =</span> evals, <span class="kw">aes</span>(<span class="dt">x =</span> bty_avg, <span class="dt">y =</span> score)) <span class="op">+</span></span>
+<span id="cb11-2"><a href="simple-linear-regression.html#cb11-2"></a><span class="st">  </span><span class="kw">geom_jitter</span>() <span class="op">+</span></span>
+<span id="cb11-3"><a href="simple-linear-regression.html#cb11-3"></a><span class="st">  </span><span class="kw">geom_smooth</span>(<span class="dt">method =</span> <span class="st">&quot;lm&quot;</span>)</span></code></pre></div>
 <p><code>geom_smooth</code> aids in seeing patterns in the presence of overplotting. In the code above, it fits a linear model using <code>method = "lm"</code> and fits the line of best fit over the plot of <code>bty_avg</code> and <code>score</code>. The blue line is the model fitted. The shaded grey area around the line is called a "confidence band" and tells you about the variability you might expect in your predictions. To remove the confidence band, use <code>se = FALSE</code>.</p>
 <p><br></p>
 <p><strong>Does it appear that average beauty score is a predictor of lecture evaluation score?</strong></p>
-<div id="radio_NVNKHIUSXX" class="webex-radiogroup">
-<label><input type="radio" autocomplete="off" name="radio_NVNKHIUSXX" value=""></input> <span>No</span></label><label><input type="radio" autocomplete="off" name="radio_NVNKHIUSXX" value="answer"></input> <span>Yes</span></label>
+<div id="radio_MSLDQSCRDK" class="webex-radiogroup">
+<label><input type="radio" autocomplete="off" name="radio_MSLDQSCRDK" value=""></input> <span>No</span></label><label><input type="radio" autocomplete="off" name="radio_MSLDQSCRDK" value="answer"></input> <span>Yes</span></label>
 </div>
 <p><br></p>
-<div id="exercise-3" class="section level2 hasAnchor" number="3.1">
+<div id="exercise-3" class="section level2 hasAnchor">
 <h2><span class="header-section-number">3.1</span> <strong>Exercise 3</strong><a href="simple-linear-regression.html#exercise-3" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>Produce residual plots to evaluate whether the conditions of least squares regression are reasonable.</p>
 <p><strong>Hint</strong> Create a model object first, e.g. using <code>model1 &lt;- lm(score ~ bty_avg, data = evals)</code>, then produce the plots.</p>
@@ -215,66 +209,66 @@ The variable <code>bty_avg</code> is the average beauty rating of lecturer (wher
 <button>
 Hint 1
 </button>
-<div class="sourceCode" id="cb12"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb12-1"><a href="simple-linear-regression.html#cb12-1" aria-hidden="true" tabindex="-1"></a>model1 <span class="ot">&lt;-</span> <span class="fu">lm</span>(???)</span>
-<span id="cb12-2"><a href="simple-linear-regression.html#cb12-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb12-3"><a href="simple-linear-regression.html#cb12-3" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> ???, <span class="fu">aes</span>(???)) <span class="sc">+</span></span>
-<span id="cb12-4"><a href="simple-linear-regression.html#cb12-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="at">color =</span> <span class="st">&quot;seagreen2&quot;</span>) <span class="sc">+</span></span>
-<span id="cb12-5"><a href="simple-linear-regression.html#cb12-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_hline</span>(???) <span class="sc">+</span></span>
-<span id="cb12-6"><a href="simple-linear-regression.html#cb12-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">xlab</span>(???) <span class="sc">+</span></span>
-<span id="cb12-7"><a href="simple-linear-regression.html#cb12-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ylab</span>(???)</span>
-<span id="cb12-8"><a href="simple-linear-regression.html#cb12-8" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb12-9"><a href="simple-linear-regression.html#cb12-9" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> ???, <span class="fu">aes</span>(???)) <span class="sc">+</span></span>
-<span id="cb12-10"><a href="simple-linear-regression.html#cb12-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_histogram</span>(<span class="at">bins =</span> <span class="dv">40</span>, <span class="at">fill =</span> <span class="st">&quot;dodgerblue2&quot;</span>) <span class="sc">+</span></span>
-<span id="cb12-11"><a href="simple-linear-regression.html#cb12-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">xlab</span>(???)</span>
-<span id="cb12-12"><a href="simple-linear-regression.html#cb12-12" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb12-13"><a href="simple-linear-regression.html#cb12-13" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> ???, <span class="fu">aes</span>(???)) <span class="sc">+</span></span>
-<span id="cb12-14"><a href="simple-linear-regression.html#cb12-14" aria-hidden="true" tabindex="-1"></a>  <span class="fu">stat_qq</span>() <span class="sc">+</span></span>
-<span id="cb12-15"><a href="simple-linear-regression.html#cb12-15" aria-hidden="true" tabindex="-1"></a>  <span class="fu">stat_qq_line</span>(<span class="at">col =</span> <span class="dv">2</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb12"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb12-1"><a href="simple-linear-regression.html#cb12-1"></a>model1 &lt;-<span class="st"> </span><span class="kw">lm</span>(???)</span>
+<span id="cb12-2"><a href="simple-linear-regression.html#cb12-2"></a></span>
+<span id="cb12-3"><a href="simple-linear-regression.html#cb12-3"></a><span class="kw">ggplot</span>(<span class="dt">data =</span> ???, <span class="kw">aes</span>(???)) <span class="op">+</span></span>
+<span id="cb12-4"><a href="simple-linear-regression.html#cb12-4"></a><span class="st">  </span><span class="kw">geom_point</span>(<span class="dt">color =</span> <span class="st">&quot;seagreen2&quot;</span>) <span class="op">+</span></span>
+<span id="cb12-5"><a href="simple-linear-regression.html#cb12-5"></a><span class="st">  </span><span class="kw">geom_hline</span>(???) <span class="op">+</span></span>
+<span id="cb12-6"><a href="simple-linear-regression.html#cb12-6"></a><span class="st">  </span><span class="kw">xlab</span>(???) <span class="op">+</span></span>
+<span id="cb12-7"><a href="simple-linear-regression.html#cb12-7"></a><span class="st">  </span><span class="kw">ylab</span>(???)</span>
+<span id="cb12-8"><a href="simple-linear-regression.html#cb12-8"></a></span>
+<span id="cb12-9"><a href="simple-linear-regression.html#cb12-9"></a><span class="kw">ggplot</span>(<span class="dt">data =</span> ???, <span class="kw">aes</span>(???)) <span class="op">+</span></span>
+<span id="cb12-10"><a href="simple-linear-regression.html#cb12-10"></a><span class="st">  </span><span class="kw">geom_histogram</span>(<span class="dt">bins =</span> <span class="dv">40</span>, <span class="dt">fill =</span> <span class="st">&quot;dodgerblue2&quot;</span>) <span class="op">+</span></span>
+<span id="cb12-11"><a href="simple-linear-regression.html#cb12-11"></a><span class="st">  </span><span class="kw">xlab</span>(???)</span>
+<span id="cb12-12"><a href="simple-linear-regression.html#cb12-12"></a></span>
+<span id="cb12-13"><a href="simple-linear-regression.html#cb12-13"></a><span class="kw">ggplot</span>(<span class="dt">data =</span> ???, <span class="kw">aes</span>(???)) <span class="op">+</span></span>
+<span id="cb12-14"><a href="simple-linear-regression.html#cb12-14"></a><span class="st">  </span><span class="kw">stat_qq</span>() <span class="op">+</span></span>
+<span id="cb12-15"><a href="simple-linear-regression.html#cb12-15"></a><span class="st">  </span><span class="kw">stat_qq_line</span>(<span class="dt">col =</span> <span class="dv">2</span>)</span></code></pre></div>
 </div>
 <div class="webex-solution">
 <button>
 Hint 2
 </button>
-<div class="sourceCode" id="cb13"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb13-1"><a href="simple-linear-regression.html#cb13-1" aria-hidden="true" tabindex="-1"></a>model1 <span class="ot">&lt;-</span> <span class="fu">lm</span>(score <span class="sc">~</span> bty_avg, <span class="at">data =</span> evals)</span>
-<span id="cb13-2"><a href="simple-linear-regression.html#cb13-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb13-3"><a href="simple-linear-regression.html#cb13-3" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> ???, <span class="fu">aes</span>(???)) <span class="sc">+</span></span>
-<span id="cb13-4"><a href="simple-linear-regression.html#cb13-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="at">color =</span> <span class="st">&quot;seagreen2&quot;</span>) <span class="sc">+</span></span>
-<span id="cb13-5"><a href="simple-linear-regression.html#cb13-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_hline</span>(???) <span class="sc">+</span></span>
-<span id="cb13-6"><a href="simple-linear-regression.html#cb13-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">xlab</span>(<span class="st">&quot;Fitted values&quot;</span>) <span class="sc">+</span></span>
-<span id="cb13-7"><a href="simple-linear-regression.html#cb13-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ylab</span>(<span class="st">&quot;Residuals&quot;</span>)</span>
-<span id="cb13-8"><a href="simple-linear-regression.html#cb13-8" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb13-9"><a href="simple-linear-regression.html#cb13-9" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> ???, <span class="fu">aes</span>(???)) <span class="sc">+</span></span>
-<span id="cb13-10"><a href="simple-linear-regression.html#cb13-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_histogram</span>(<span class="at">bins =</span> <span class="dv">40</span>, <span class="at">fill =</span> <span class="st">&quot;dodgerblue2&quot;</span>) <span class="sc">+</span></span>
-<span id="cb13-11"><a href="simple-linear-regression.html#cb13-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">xlab</span>(<span class="st">&quot;Residuals&quot;</span>)</span>
-<span id="cb13-12"><a href="simple-linear-regression.html#cb13-12" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb13-13"><a href="simple-linear-regression.html#cb13-13" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> ???, <span class="fu">aes</span>(???)) <span class="sc">+</span></span>
-<span id="cb13-14"><a href="simple-linear-regression.html#cb13-14" aria-hidden="true" tabindex="-1"></a>  <span class="fu">stat_qq</span>() <span class="sc">+</span></span>
-<span id="cb13-15"><a href="simple-linear-regression.html#cb13-15" aria-hidden="true" tabindex="-1"></a>  <span class="fu">stat_qq_line</span>(<span class="at">col =</span> <span class="dv">2</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb13"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb13-1"><a href="simple-linear-regression.html#cb13-1"></a>model1 &lt;-<span class="st"> </span><span class="kw">lm</span>(score <span class="op">~</span><span class="st"> </span>bty_avg, <span class="dt">data =</span> evals)</span>
+<span id="cb13-2"><a href="simple-linear-regression.html#cb13-2"></a></span>
+<span id="cb13-3"><a href="simple-linear-regression.html#cb13-3"></a><span class="kw">ggplot</span>(<span class="dt">data =</span> ???, <span class="kw">aes</span>(???)) <span class="op">+</span></span>
+<span id="cb13-4"><a href="simple-linear-regression.html#cb13-4"></a><span class="st">  </span><span class="kw">geom_point</span>(<span class="dt">color =</span> <span class="st">&quot;seagreen2&quot;</span>) <span class="op">+</span></span>
+<span id="cb13-5"><a href="simple-linear-regression.html#cb13-5"></a><span class="st">  </span><span class="kw">geom_hline</span>(???) <span class="op">+</span></span>
+<span id="cb13-6"><a href="simple-linear-regression.html#cb13-6"></a><span class="st">  </span><span class="kw">xlab</span>(<span class="st">&quot;Fitted values&quot;</span>) <span class="op">+</span></span>
+<span id="cb13-7"><a href="simple-linear-regression.html#cb13-7"></a><span class="st">  </span><span class="kw">ylab</span>(<span class="st">&quot;Residuals&quot;</span>)</span>
+<span id="cb13-8"><a href="simple-linear-regression.html#cb13-8"></a></span>
+<span id="cb13-9"><a href="simple-linear-regression.html#cb13-9"></a><span class="kw">ggplot</span>(<span class="dt">data =</span> ???, <span class="kw">aes</span>(???)) <span class="op">+</span></span>
+<span id="cb13-10"><a href="simple-linear-regression.html#cb13-10"></a><span class="st">  </span><span class="kw">geom_histogram</span>(<span class="dt">bins =</span> <span class="dv">40</span>, <span class="dt">fill =</span> <span class="st">&quot;dodgerblue2&quot;</span>) <span class="op">+</span></span>
+<span id="cb13-11"><a href="simple-linear-regression.html#cb13-11"></a><span class="st">  </span><span class="kw">xlab</span>(<span class="st">&quot;Residuals&quot;</span>)</span>
+<span id="cb13-12"><a href="simple-linear-regression.html#cb13-12"></a></span>
+<span id="cb13-13"><a href="simple-linear-regression.html#cb13-13"></a><span class="kw">ggplot</span>(<span class="dt">data =</span> ???, <span class="kw">aes</span>(???)) <span class="op">+</span></span>
+<span id="cb13-14"><a href="simple-linear-regression.html#cb13-14"></a><span class="st">  </span><span class="kw">stat_qq</span>() <span class="op">+</span></span>
+<span id="cb13-15"><a href="simple-linear-regression.html#cb13-15"></a><span class="st">  </span><span class="kw">stat_qq_line</span>(<span class="dt">col =</span> <span class="dv">2</span>)</span></code></pre></div>
 </div>
 <div class="webex-solution">
 <button>
 Solution
 </button>
-<div class="sourceCode" id="cb14"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb14-1"><a href="simple-linear-regression.html#cb14-1" aria-hidden="true" tabindex="-1"></a>model1 <span class="ot">&lt;-</span> <span class="fu">lm</span>(score <span class="sc">~</span> bty_avg, <span class="at">data =</span> evals)</span>
-<span id="cb14-2"><a href="simple-linear-regression.html#cb14-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb14-3"><a href="simple-linear-regression.html#cb14-3" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> model1, <span class="fu">aes</span>(<span class="at">x =</span> .fitted, <span class="at">y =</span> .resid)) <span class="sc">+</span></span>
-<span id="cb14-4"><a href="simple-linear-regression.html#cb14-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="at">color =</span> <span class="st">&quot;seagreen2&quot;</span>) <span class="sc">+</span></span>
-<span id="cb14-5"><a href="simple-linear-regression.html#cb14-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_hline</span>(<span class="at">yintercept =</span> <span class="dv">0</span>, <span class="at">linetype =</span> <span class="st">&quot;dashed&quot;</span>) <span class="sc">+</span></span>
-<span id="cb14-6"><a href="simple-linear-regression.html#cb14-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">xlab</span>(<span class="st">&quot;Fitted values&quot;</span>) <span class="sc">+</span></span>
-<span id="cb14-7"><a href="simple-linear-regression.html#cb14-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ylab</span>(<span class="st">&quot;Residuals&quot;</span>)</span>
-<span id="cb14-8"><a href="simple-linear-regression.html#cb14-8" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb14-9"><a href="simple-linear-regression.html#cb14-9" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> model1, <span class="fu">aes</span>(<span class="at">x =</span> .resid)) <span class="sc">+</span></span>
-<span id="cb14-10"><a href="simple-linear-regression.html#cb14-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_histogram</span>(<span class="at">bins =</span> <span class="dv">40</span>, <span class="at">fill =</span> <span class="st">&quot;dodgerblue2&quot;</span>) <span class="sc">+</span></span>
-<span id="cb14-11"><a href="simple-linear-regression.html#cb14-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">xlab</span>(<span class="st">&quot;Residuals&quot;</span>)</span>
-<span id="cb14-12"><a href="simple-linear-regression.html#cb14-12" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb14-13"><a href="simple-linear-regression.html#cb14-13" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> model1, <span class="fu">aes</span>(<span class="at">sample =</span> .resid)) <span class="sc">+</span></span>
-<span id="cb14-14"><a href="simple-linear-regression.html#cb14-14" aria-hidden="true" tabindex="-1"></a>  <span class="fu">stat_qq</span>() <span class="sc">+</span></span>
-<span id="cb14-15"><a href="simple-linear-regression.html#cb14-15" aria-hidden="true" tabindex="-1"></a>  <span class="fu">stat_qq_line</span>(<span class="at">col =</span> <span class="dv">2</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb14"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb14-1"><a href="simple-linear-regression.html#cb14-1"></a>model1 &lt;-<span class="st"> </span><span class="kw">lm</span>(score <span class="op">~</span><span class="st"> </span>bty_avg, <span class="dt">data =</span> evals)</span>
+<span id="cb14-2"><a href="simple-linear-regression.html#cb14-2"></a></span>
+<span id="cb14-3"><a href="simple-linear-regression.html#cb14-3"></a><span class="kw">ggplot</span>(<span class="dt">data =</span> model1, <span class="kw">aes</span>(<span class="dt">x =</span> .fitted, <span class="dt">y =</span> .resid)) <span class="op">+</span></span>
+<span id="cb14-4"><a href="simple-linear-regression.html#cb14-4"></a><span class="st">  </span><span class="kw">geom_point</span>(<span class="dt">color =</span> <span class="st">&quot;seagreen2&quot;</span>) <span class="op">+</span></span>
+<span id="cb14-5"><a href="simple-linear-regression.html#cb14-5"></a><span class="st">  </span><span class="kw">geom_hline</span>(<span class="dt">yintercept =</span> <span class="dv">0</span>, <span class="dt">linetype =</span> <span class="st">&quot;dashed&quot;</span>) <span class="op">+</span></span>
+<span id="cb14-6"><a href="simple-linear-regression.html#cb14-6"></a><span class="st">  </span><span class="kw">xlab</span>(<span class="st">&quot;Fitted values&quot;</span>) <span class="op">+</span></span>
+<span id="cb14-7"><a href="simple-linear-regression.html#cb14-7"></a><span class="st">  </span><span class="kw">ylab</span>(<span class="st">&quot;Residuals&quot;</span>)</span>
+<span id="cb14-8"><a href="simple-linear-regression.html#cb14-8"></a></span>
+<span id="cb14-9"><a href="simple-linear-regression.html#cb14-9"></a><span class="kw">ggplot</span>(<span class="dt">data =</span> model1, <span class="kw">aes</span>(<span class="dt">x =</span> .resid)) <span class="op">+</span></span>
+<span id="cb14-10"><a href="simple-linear-regression.html#cb14-10"></a><span class="st">  </span><span class="kw">geom_histogram</span>(<span class="dt">bins =</span> <span class="dv">40</span>, <span class="dt">fill =</span> <span class="st">&quot;dodgerblue2&quot;</span>) <span class="op">+</span></span>
+<span id="cb14-11"><a href="simple-linear-regression.html#cb14-11"></a><span class="st">  </span><span class="kw">xlab</span>(<span class="st">&quot;Residuals&quot;</span>)</span>
+<span id="cb14-12"><a href="simple-linear-regression.html#cb14-12"></a></span>
+<span id="cb14-13"><a href="simple-linear-regression.html#cb14-13"></a><span class="kw">ggplot</span>(<span class="dt">data =</span> model1, <span class="kw">aes</span>(<span class="dt">sample =</span> .resid)) <span class="op">+</span></span>
+<span id="cb14-14"><a href="simple-linear-regression.html#cb14-14"></a><span class="st">  </span><span class="kw">stat_qq</span>() <span class="op">+</span></span>
+<span id="cb14-15"><a href="simple-linear-regression.html#cb14-15"></a><span class="st">  </span><span class="kw">stat_qq_line</span>(<span class="dt">col =</span> <span class="dv">2</span>)</span></code></pre></div>
 </div>
 <p><br></p>
 <p><strong>From the residuals, does it appear that the conditions of least squares regression are reasonable?</strong></p>
-<div id="radio_FDCCGEODLU" class="webex-radiogroup">
-<label><input type="radio" autocomplete="off" name="radio_FDCCGEODLU" value="answer"></input> <span>Yes, since the residuals are scattered evenly above and below the zero line and while neither the histogram nor the QQ-plot are perfect, they both look adequate to show the residuals are approximately normally distributed.</span></label><label><input type="radio" autocomplete="off" name="radio_FDCCGEODLU" value=""></input> <span>No, since the residuals aren't scattered evenly above and below the zero line, the histogram does not look bell shaped and centred at zero since and many of the QQ-plot points are very far from the line</span></label>
+<div id="radio_YGBDBBMCDA" class="webex-radiogroup">
+<label><input type="radio" autocomplete="off" name="radio_YGBDBBMCDA" value="answer"></input> <span>Yes, since the residuals are scattered evenly above and below the zero line and while neither the histogram nor the QQ-plot are perfect, they both look adequate to show the residuals are approximately normally distributed.</span></label><label><input type="radio" autocomplete="off" name="radio_YGBDBBMCDA" value=""></input> <span>No, since the residuals aren't scattered evenly above and below the zero line, the histogram does not look bell shaped and centred at zero since and many of the QQ-plot points are very far from the line</span></label>
 </div>
 <p><br></p>
 

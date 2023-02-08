@@ -18,14 +18,15 @@ In this lab we will analyze the data from this study in order to learn what goes
 
 The data were gathered from end of semester student evaluations for a large sample of lecturers from the University of Texas at Austin. In addition, six students rated the lecturers' physical appearance. The result is a data frame where each row contains a different course/lecturer and columns represent variables about the courses and lecturers. 
 
-The data frame is called `evals` and is contained in the **openintro** package (you can read more about it <a href="https://www.openintro.org/data/index.php?data=evals"> here</a>). 
+The data to be analyzed are saved in a csv file called `evals.csv`(you can read more about it <a href="https://www.openintro.org/data/index.php?data=evals"> here</a>). We can load the data and view the first few lines of the data by running the code below.
 
-We can load the data and view the first few lines of the data by running the code below. 
 
-```{r head, eval = FALSE}
-data('evals', package='openintro')
-head(evals)
+```{r import-data-optional, echo=TRUE, warnings=FALSE, message=FALSE}
+evals <- read.csv(url("https://raw.githubusercontent.com/Glasgow-Stats-L1-L2/S1Z_Lab4/main/evals.csv"))
 ```
+
+You may download the dataset named `evals.csv` file from our Moodle course page. Once the file has downloaded, **save it in the same folder** as the `R` script file you created and saved for this lab. You should now set your working directory to this location by clicking `Session > Set Working Directory > To Source File Location`. You can load the data set into your workspace by running `mlb11 <- read.csv("evals.csv")`. 
+
 
 It can be seen that the data contains 23 variables which we will explore to see if they have any relationship with the variable `score`, the evaluation score of each lecturer in each course (the "response" variable). These variables include both categorical and numerical types of variables.
 

@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>6 Finding the Best Model | S1Z Lab 4</title>
   <meta name="description" content="6 Finding the Best Model | S1Z Lab 4" />
-  <meta name="generator" content="bookdown 0.30 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.31 and GitBook 2.6.7" />
 
   <meta property="og:title" content="6 Finding the Best Model | S1Z Lab 4" />
   <meta property="og:type" content="book" />
@@ -47,25 +47,24 @@
 
 
 
-<script src="libs/accessible-code-block-0.0.1/empty-anchor.js"></script>
 <link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
 <link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
 <script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
 
 
 <style type="text/css">
-code.sourceCode > span { display: inline-block; line-height: 1.25; }
-code.sourceCode > span { color: inherit; text-decoration: inherit; }
-code.sourceCode > span:empty { height: 1.2em; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
 .sourceCode { overflow: visible; }
-code.sourceCode { white-space: pre; position: relative; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
 pre.sourceCode { margin: 0; }
 @media screen {
 div.sourceCode { overflow: auto; }
 }
 @media print {
-code.sourceCode { white-space: pre-wrap; }
-code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
 }
 pre.numberSource code
   { counter-reset: source-line 0; }
@@ -85,13 +84,13 @@ pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-le
 div.sourceCode
   {   }
 @media screen {
-code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
 code span.al { color: #ff0000; font-weight: bold; } /* Alert */
 code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
 code span.at { color: #7d9029; } /* Attribute */
 code span.bn { color: #40a070; } /* BaseN */
-code span.bu { } /* BuiltIn */
+code span.bu { color: #008000; } /* BuiltIn */
 code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
 code span.ch { color: #4070a0; } /* Char */
 code span.cn { color: #880000; } /* Constant */
@@ -104,7 +103,7 @@ code span.er { color: #ff0000; font-weight: bold; } /* Error */
 code span.ex { } /* Extension */
 code span.fl { color: #40a070; } /* Float */
 code span.fu { color: #06287e; } /* Function */
-code span.im { } /* Import */
+code span.im { color: #008000; font-weight: bold; } /* Import */
 code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
 code span.kw { color: #007020; font-weight: bold; } /* Keyword */
 code span.op { color: #666666; } /* Operator */
@@ -133,28 +132,35 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
       <nav role="navigation">
 
 <ul class="summary">
-<li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> Welcome to S1Z Lab 4</a><ul>
+<li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> Welcome to S1Z Lab 4</a>
+<ul>
 <li class="chapter" data-level="1.1" data-path="index.html"><a href="index.html#intended-learning-outcomes"><i class="fa fa-check"></i><b>1.1</b> Intended Learning Outcomes</a></li>
 </ul></li>
-<li class="chapter" data-level="2" data-path="exploratory-data-analysis.html"><a href="exploratory-data-analysis.html"><i class="fa fa-check"></i><b>2</b> Exploratory Data Analysis</a><ul>
-<li class="chapter" data-level="2.1" data-path="exploratory-data-analysis.html"><a href="exploratory-data-analysis.html#data"><i class="fa fa-check"></i><b>2.1</b> Data</a><ul>
+<li class="chapter" data-level="2" data-path="exploratory-data-analysis.html"><a href="exploratory-data-analysis.html"><i class="fa fa-check"></i><b>2</b> Exploratory Data Analysis</a>
+<ul>
+<li class="chapter" data-level="2.1" data-path="exploratory-data-analysis.html"><a href="exploratory-data-analysis.html#data"><i class="fa fa-check"></i><b>2.1</b> Data</a>
+<ul>
 <li class="chapter" data-level="2.1.1" data-path="exploratory-data-analysis.html"><a href="exploratory-data-analysis.html#exploring-the-data"><i class="fa fa-check"></i><b>2.1.1</b> Exploring the data</a></li>
 <li class="chapter" data-level="2.1.2" data-path="exploratory-data-analysis.html"><a href="exploratory-data-analysis.html#exercise-1"><i class="fa fa-check"></i><b>2.1.2</b> <strong>Exercise 1</strong></a></li>
 <li class="chapter" data-level="2.1.3" data-path="exploratory-data-analysis.html"><a href="exploratory-data-analysis.html#exercise-2"><i class="fa fa-check"></i><b>2.1.3</b> <strong>Exercise 2</strong></a></li>
 </ul></li>
 </ul></li>
-<li class="chapter" data-level="3" data-path="simple-linear-regression.html"><a href="simple-linear-regression.html"><i class="fa fa-check"></i><b>3</b> Simple Linear Regression</a><ul>
+<li class="chapter" data-level="3" data-path="simple-linear-regression.html"><a href="simple-linear-regression.html"><i class="fa fa-check"></i><b>3</b> Simple Linear Regression</a>
+<ul>
 <li class="chapter" data-level="3.1" data-path="simple-linear-regression.html"><a href="simple-linear-regression.html#exercise-3"><i class="fa fa-check"></i><b>3.1</b> <strong>Exercise 3</strong></a></li>
 </ul></li>
 <li class="chapter" data-level="4" data-path="collinearity.html"><a href="collinearity.html"><i class="fa fa-check"></i><b>4</b> Collinearity</a></li>
-<li class="chapter" data-level="5" data-path="multiple-predictors.html"><a href="multiple-predictors.html"><i class="fa fa-check"></i><b>5</b> Multiple Predictors</a><ul>
+<li class="chapter" data-level="5" data-path="multiple-predictors.html"><a href="multiple-predictors.html"><i class="fa fa-check"></i><b>5</b> Multiple Predictors</a>
+<ul>
 <li class="chapter" data-level="5.1" data-path="multiple-predictors.html"><a href="multiple-predictors.html#exercise-4"><i class="fa fa-check"></i><b>5.1</b> <strong>Exercise 4</strong></a></li>
-<li class="chapter" data-level="5.2" data-path="multiple-predictors.html"><a href="multiple-predictors.html#interpretation-of-a-categorical-variable-with-2-levels"><i class="fa fa-check"></i><b>5.2</b> Interpretation of a Categorical Variable with 2 levels</a><ul>
+<li class="chapter" data-level="5.2" data-path="multiple-predictors.html"><a href="multiple-predictors.html#interpretation-of-a-categorical-variable-with-2-levels"><i class="fa fa-check"></i><b>5.2</b> Interpretation of a Categorical Variable with 2 levels</a>
+<ul>
 <li class="chapter" data-level="5.2.1" data-path="multiple-predictors.html"><a href="multiple-predictors.html#exercise-5"><i class="fa fa-check"></i><b>5.2.1</b> <strong>Exercise 5</strong></a></li>
 </ul></li>
 <li class="chapter" data-level="5.3" data-path="multiple-predictors.html"><a href="multiple-predictors.html#interpretation-of-a-categorical-variable-with-more-than-2-levels"><i class="fa fa-check"></i><b>5.3</b> Interpretation of a Categorical Variable with more than 2 levels</a></li>
 </ul></li>
-<li class="chapter" data-level="6" data-path="finding-the-best-model.html"><a href="finding-the-best-model.html"><i class="fa fa-check"></i><b>6</b> Finding the Best Model</a><ul>
+<li class="chapter" data-level="6" data-path="finding-the-best-model.html"><a href="finding-the-best-model.html"><i class="fa fa-check"></i><b>6</b> Finding the Best Model</a>
+<ul>
 <li class="chapter" data-level="6.1" data-path="finding-the-best-model.html"><a href="finding-the-best-model.html#exercise-6"><i class="fa fa-check"></i><b>6.1</b> <strong>Exercise 6</strong></a></li>
 <li class="chapter" data-level="6.2" data-path="finding-the-best-model.html"><a href="finding-the-best-model.html#exercise-7"><i class="fa fa-check"></i><b>6.2</b> <strong>Exercise 7</strong></a></li>
 <li class="chapter" data-level="6.3" data-path="finding-the-best-model.html"><a href="finding-the-best-model.html#exercise-8"><i class="fa fa-check"></i><b>6.3</b> <strong>Exercise 8</strong></a></li>
@@ -178,61 +184,61 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="finding-the-best-model" class="section level1 hasAnchor">
+<div id="finding-the-best-model" class="section level1 hasAnchor" number="6">
 <h1><span class="header-section-number">6</span> Finding the Best Model<a href="finding-the-best-model.html#finding-the-best-model" class="anchor-section" aria-label="Anchor link to header"></a></h1>
 <p><br></p>
 <p>Clearly in these data, as in many examples, there are many possible configurations of predictor variables. One approach to deciding which variables to include in our model is called <em>backward elimination</em>, described in <a href="https://www.openintro.org/redirect.php?go=os4_tablet&referrer=/stat/os4.php#page=353">OpenIntro Section 9.2 Page 353</a>. We will start with a "full" model that predicts lecturer score based on rank, gender, ethnicity, language of the university where they got their degree, age, proportion of students that filled out evaluations, class size, course level, number of lecturers, number of credits, average beauty rating, outfit, and picture color.</p>
 <p><br></p>
-<div id="exercise-6" class="section level2 hasAnchor">
+<div id="exercise-6" class="section level2 hasAnchor" number="6.1">
 <h2><span class="header-section-number">6.1</span> <strong>Exercise 6</strong><a href="finding-the-best-model.html#exercise-6" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>Create the full model explained above and name it <code>fullmodel</code>.</p>
 <div class="webex-solution">
 <button>
 Hint
 </button>
-<div class="sourceCode" id="cb25"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb25-1"><a href="finding-the-best-model.html#cb25-1"></a>fullmodel &lt;-<span class="st"> </span><span class="kw">lm</span>(??? <span class="op">~</span><span class="st"> </span>??? <span class="op">+</span><span class="st"> </span>... <span class="op">+</span><span class="st"> </span>???, <span class="dt">data =</span> ???)</span>
-<span id="cb25-2"><a href="finding-the-best-model.html#cb25-2"></a></span>
-<span id="cb25-3"><a href="finding-the-best-model.html#cb25-3"></a><span class="kw">summary</span>(???)</span></code></pre></div>
+<div class="sourceCode" id="cb25"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb25-1"><a href="finding-the-best-model.html#cb25-1" aria-hidden="true" tabindex="-1"></a>fullmodel <span class="ot">&lt;-</span> <span class="fu">lm</span>(??? <span class="sc">~</span> ??? <span class="sc">+</span> ... <span class="sc">+</span> ???, <span class="at">data =</span> ???)</span>
+<span id="cb25-2"><a href="finding-the-best-model.html#cb25-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb25-3"><a href="finding-the-best-model.html#cb25-3" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(???)</span></code></pre></div>
 </div>
 <div class="webex-solution">
 <button>
 Solution
 </button>
-<div class="sourceCode" id="cb26"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb26-1"><a href="finding-the-best-model.html#cb26-1"></a>fullmodel &lt;-<span class="st"> </span><span class="kw">lm</span>(score <span class="op">~</span><span class="st"> </span>rank <span class="op">+</span><span class="st"> </span>gender <span class="op">+</span><span class="st"> </span>ethnicity <span class="op">+</span><span class="st"> </span>language <span class="op">+</span><span class="st"> </span>age <span class="op">+</span><span class="st"> </span>cls_perc_eval <span class="op">+</span><span class="st"> </span>cls_students <span class="op">+</span><span class="st"> </span>cls_level <span class="op">+</span><span class="st"> </span>cls_profs <span class="op">+</span><span class="st"> </span>cls_credits <span class="op">+</span><span class="st"> </span>bty_avg <span class="op">+</span><span class="st"> </span>pic_outfit <span class="op">+</span><span class="st"> </span>pic_color, <span class="dt">data =</span> evals)</span>
-<span id="cb26-2"><a href="finding-the-best-model.html#cb26-2"></a></span>
-<span id="cb26-3"><a href="finding-the-best-model.html#cb26-3"></a><span class="kw">summary</span>(fullmodel)</span></code></pre></div>
+<div class="sourceCode" id="cb26"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb26-1"><a href="finding-the-best-model.html#cb26-1" aria-hidden="true" tabindex="-1"></a>fullmodel <span class="ot">&lt;-</span> <span class="fu">lm</span>(score <span class="sc">~</span> rank <span class="sc">+</span> gender <span class="sc">+</span> ethnicity <span class="sc">+</span> language <span class="sc">+</span> age <span class="sc">+</span> cls_perc_eval <span class="sc">+</span> cls_students <span class="sc">+</span> cls_level <span class="sc">+</span> cls_profs <span class="sc">+</span> cls_credits <span class="sc">+</span> bty_avg <span class="sc">+</span> pic_outfit <span class="sc">+</span> pic_color, <span class="at">data =</span> evals)</span>
+<span id="cb26-2"><a href="finding-the-best-model.html#cb26-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb26-3"><a href="finding-the-best-model.html#cb26-3" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(fullmodel)</span></code></pre></div>
 </div>
 <p><br></p>
 <p><strong>What is the correct interpretation for the coefficient associated with the <code>age</code> variable?</strong></p>
-<div id="radio_PPMXHOPJYS" class="webex-radiogroup">
-<label><input type="radio" autocomplete="off" name="radio_PPMXHOPJYS" value="answer"></input> <span>A one unit increase in <code>age</code> is associated with a 0.009 decrease in <code>score</code> when all other variables are held constant.</span></label><label><input type="radio" autocomplete="off" name="radio_PPMXHOPJYS" value=""></input> <span>A one unit increase in <code>age</code> is associated with a 0.009 increase in <code>score</code> when all other variables are held constant.</span></label><label><input type="radio" autocomplete="off" name="radio_PPMXHOPJYS" value=""></input> <span>A one unit decrease in <code>age</code> is associated with a 0.009 decrease in <code>score</code> when all other variables are held constant.</span></label><label><input type="radio" autocomplete="off" name="radio_PPMXHOPJYS" value=""></input> <span>A one unit decrease in <code>age</code> is associated with a 0.009 increase in <code>score</code>.</span></label>
+<div id="radio_EMPZPSQYRU" class="webex-radiogroup">
+<label><input type="radio" autocomplete="off" name="radio_EMPZPSQYRU" value=""></input> <span>A one unit increase in <code>age</code> is associated with a 0.009 increase in <code>score</code> when all other variables are held constant.</span></label><label><input type="radio" autocomplete="off" name="radio_EMPZPSQYRU" value="answer"></input> <span>A one unit increase in <code>age</code> is associated with a 0.009 decrease in <code>score</code> when all other variables are held constant.</span></label><label><input type="radio" autocomplete="off" name="radio_EMPZPSQYRU" value=""></input> <span>A one unit decrease in <code>age</code> is associated with a 0.009 decrease in <code>score</code> when all other variables are held constant.</span></label><label><input type="radio" autocomplete="off" name="radio_EMPZPSQYRU" value=""></input> <span>A one unit decrease in <code>age</code> is associated with a 0.009 increase in <code>score</code>.</span></label>
 </div>
 <p><br></p>
 <p><strong>What is the correct interpretation for the coefficient associated with the <code>ethnicity</code> variable?</strong></p>
-<div id="radio_EDEQHTDNTK" class="webex-radiogroup">
-<label><input type="radio" autocomplete="off" name="radio_EDEQHTDNTK" value=""></input> <span>An one unit increase in <code>ethnicity</code> is associated with a 0.12349 decrease in <code>score</code>.</span></label><label><input type="radio" autocomplete="off" name="radio_EDEQHTDNTK" value="answer"></input> <span>A slope of 0.12349 means that the model predicts a 0.123 unit higher score for those who are not minority ethnicity compared to those who are a minority ethnicity when all other variables are held constant.</span></label><label><input type="radio" autocomplete="off" name="radio_EDEQHTDNTK" value=""></input> <span>A slope of 0.12349 means that the model predicts a 0.123 unit higher score for those who are a minority ethnicity compared to those who are not a minority ethnicity when all other variables are held constant.</span></label><label><input type="radio" autocomplete="off" name="radio_EDEQHTDNTK" value=""></input> <span>A one unit increase in <code>ethnicity</code> is associated with a 0.12349 unit increase in <code>score</code>.</span></label>
+<div id="radio_JMUCDYSKGZ" class="webex-radiogroup">
+<label><input type="radio" autocomplete="off" name="radio_JMUCDYSKGZ" value="answer"></input> <span>A slope of 0.12349 means that the model predicts a 0.123 unit higher score for those who are not minority ethnicity compared to those who are a minority ethnicity when all other variables are held constant.</span></label><label><input type="radio" autocomplete="off" name="radio_JMUCDYSKGZ" value=""></input> <span>A slope of 0.12349 means that the model predicts a 0.123 unit higher score for those who are a minority ethnicity compared to those who are not a minority ethnicity when all other variables are held constant.</span></label><label><input type="radio" autocomplete="off" name="radio_JMUCDYSKGZ" value=""></input> <span>A one unit increase in <code>ethnicity</code> is associated with a 0.12349 unit increase in <code>score</code>.</span></label><label><input type="radio" autocomplete="off" name="radio_JMUCDYSKGZ" value=""></input> <span>An one unit increase in <code>ethnicity</code> is associated with a 0.12349 decrease in <code>score</code>.</span></label>
 </div>
 <p><br></p>
 </div>
-<div id="exercise-7" class="section level2 hasAnchor">
+<div id="exercise-7" class="section level2 hasAnchor" number="6.2">
 <h2><span class="header-section-number">6.2</span> <strong>Exercise 7</strong><a href="finding-the-best-model.html#exercise-7" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>Drop the variable with the highest p-value and re-fit the model. Name this model <code>m1</code>. Produce a summary of the updated model.</p>
 <div class="webex-solution">
 <button>
 Hint
 </button>
-<div class="sourceCode" id="cb27"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb27-1"><a href="finding-the-best-model.html#cb27-1"></a>m1 &lt;-<span class="st"> </span><span class="kw">lm</span>(??? <span class="op">~</span><span class="st"> </span>??? <span class="op">+</span><span class="st"> </span>... <span class="op">+</span><span class="st"> </span>???, <span class="dt">data =</span> ???)</span>
-<span id="cb27-2"><a href="finding-the-best-model.html#cb27-2"></a></span>
-<span id="cb27-3"><a href="finding-the-best-model.html#cb27-3"></a><span class="kw">summary</span>(???)</span></code></pre></div>
+<div class="sourceCode" id="cb27"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb27-1"><a href="finding-the-best-model.html#cb27-1" aria-hidden="true" tabindex="-1"></a>m1 <span class="ot">&lt;-</span> <span class="fu">lm</span>(??? <span class="sc">~</span> ??? <span class="sc">+</span> ... <span class="sc">+</span> ???, <span class="at">data =</span> ???)</span>
+<span id="cb27-2"><a href="finding-the-best-model.html#cb27-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb27-3"><a href="finding-the-best-model.html#cb27-3" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(???)</span></code></pre></div>
 </div>
 <div class="webex-solution">
 <button>
 Solution
 </button>
-<div class="sourceCode" id="cb28"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb28-1"><a href="finding-the-best-model.html#cb28-1"></a>m1 &lt;-<span class="st"> </span><span class="kw">lm</span>(score <span class="op">~</span><span class="st"> </span>rank <span class="op">+</span><span class="st"> </span>gender <span class="op">+</span><span class="st"> </span>ethnicity <span class="op">+</span><span class="st"> </span>language <span class="op">+</span><span class="st"> </span>age <span class="op">+</span><span class="st"> </span>cls_perc_eval <span class="op">+</span><span class="st"> </span>cls_students <span class="op">+</span><span class="st"> </span>cls_level <span class="op">+</span><span class="st"> </span>cls_credits <span class="op">+</span><span class="st"> </span>bty_avg <span class="op">+</span><span class="st"> </span>pic_outfit <span class="op">+</span><span class="st"> </span>pic_color, </span>
-<span id="cb28-2"><a href="finding-the-best-model.html#cb28-2"></a>         <span class="dt">data =</span> evals)</span>
-<span id="cb28-3"><a href="finding-the-best-model.html#cb28-3"></a></span>
-<span id="cb28-4"><a href="finding-the-best-model.html#cb28-4"></a><span class="kw">summary</span>(m1)</span></code></pre></div>
+<div class="sourceCode" id="cb28"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb28-1"><a href="finding-the-best-model.html#cb28-1" aria-hidden="true" tabindex="-1"></a>m1 <span class="ot">&lt;-</span> <span class="fu">lm</span>(score <span class="sc">~</span> rank <span class="sc">+</span> gender <span class="sc">+</span> ethnicity <span class="sc">+</span> language <span class="sc">+</span> age <span class="sc">+</span> cls_perc_eval <span class="sc">+</span> cls_students <span class="sc">+</span> cls_level <span class="sc">+</span> cls_credits <span class="sc">+</span> bty_avg <span class="sc">+</span> pic_outfit <span class="sc">+</span> pic_color, </span>
+<span id="cb28-2"><a href="finding-the-best-model.html#cb28-2" aria-hidden="true" tabindex="-1"></a>         <span class="at">data =</span> evals)</span>
+<span id="cb28-3"><a href="finding-the-best-model.html#cb28-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb28-4"><a href="finding-the-best-model.html#cb28-4" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(m1)</span></code></pre></div>
 </div>
 <p><br></p>
 <p>Hopefully you saw that the highest p-value is associated with <code>cls_profssingle</code> - a categorical variable which states the number of lecturers teaching sections in course in sample, with the levels: single, multiple.</p>
@@ -240,113 +246,113 @@ Solution
 <!-- If not, the dropped variable may have been collinear with the other predictor variables. -->
 <p><br></p>
 </div>
-<div id="exercise-8" class="section level2 hasAnchor">
+<div id="exercise-8" class="section level2 hasAnchor" number="6.3">
 <h2><span class="header-section-number">6.3</span> <strong>Exercise 8</strong><a href="finding-the-best-model.html#exercise-8" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>Run the following code to use backward elimination to find the 'best' model for the data. As we are using backward elimination, at each stage we drop the variable with the highest p-value which corresponds to the least significant variable to the model.</p>
 <p><br></p>
-<div class="sourceCode" id="cb29"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb29-1"><a href="finding-the-best-model.html#cb29-1"></a>m2 &lt;-<span class="st"> </span><span class="kw">lm</span>(score <span class="op">~</span><span class="st"> </span>rank <span class="op">+</span><span class="st"> </span>gender <span class="op">+</span><span class="st"> </span>ethnicity <span class="op">+</span><span class="st"> </span>language <span class="op">+</span><span class="st"> </span>age <span class="op">+</span><span class="st"> </span>cls_perc_eval </span>
-<span id="cb29-2"><a href="finding-the-best-model.html#cb29-2"></a>             <span class="op">+</span><span class="st"> </span>cls_students <span class="op">+</span><span class="st"> </span>cls_credits <span class="op">+</span><span class="st"> </span>bty_avg </span>
-<span id="cb29-3"><a href="finding-the-best-model.html#cb29-3"></a>             <span class="op">+</span><span class="st"> </span>pic_outfit <span class="op">+</span><span class="st"> </span>pic_color, <span class="dt">data =</span> evals)</span>
-<span id="cb29-4"><a href="finding-the-best-model.html#cb29-4"></a></span>
-<span id="cb29-5"><a href="finding-the-best-model.html#cb29-5"></a><span class="kw">summary</span>(m2)</span></code></pre></div>
+<div class="sourceCode" id="cb29"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb29-1"><a href="finding-the-best-model.html#cb29-1" aria-hidden="true" tabindex="-1"></a>m2 <span class="ot">&lt;-</span> <span class="fu">lm</span>(score <span class="sc">~</span> rank <span class="sc">+</span> gender <span class="sc">+</span> ethnicity <span class="sc">+</span> language <span class="sc">+</span> age <span class="sc">+</span> cls_perc_eval </span>
+<span id="cb29-2"><a href="finding-the-best-model.html#cb29-2" aria-hidden="true" tabindex="-1"></a>             <span class="sc">+</span> cls_students <span class="sc">+</span> cls_credits <span class="sc">+</span> bty_avg </span>
+<span id="cb29-3"><a href="finding-the-best-model.html#cb29-3" aria-hidden="true" tabindex="-1"></a>             <span class="sc">+</span> pic_outfit <span class="sc">+</span> pic_color, <span class="at">data =</span> evals)</span>
+<span id="cb29-4"><a href="finding-the-best-model.html#cb29-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb29-5"><a href="finding-the-best-model.html#cb29-5" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(m2)</span></code></pre></div>
 <p><br></p>
-<div class="sourceCode" id="cb30"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb30-1"><a href="finding-the-best-model.html#cb30-1"></a>m3 &lt;-<span class="st"> </span><span class="kw">lm</span>(score <span class="op">~</span><span class="st"> </span>rank <span class="op">+</span><span class="st"> </span>gender <span class="op">+</span><span class="st"> </span>ethnicity <span class="op">+</span><span class="st"> </span>language <span class="op">+</span><span class="st"> </span>age <span class="op">+</span><span class="st"> </span>cls_perc_eval </span>
-<span id="cb30-2"><a href="finding-the-best-model.html#cb30-2"></a>             <span class="op">+</span><span class="st"> </span>cls_credits <span class="op">+</span><span class="st"> </span>bty_avg <span class="op">+</span><span class="st"> </span>pic_outfit <span class="op">+</span><span class="st"> </span>pic_color, <span class="dt">data =</span> evals)</span>
-<span id="cb30-3"><a href="finding-the-best-model.html#cb30-3"></a></span>
-<span id="cb30-4"><a href="finding-the-best-model.html#cb30-4"></a><span class="kw">summary</span>(m3)</span></code></pre></div>
+<div class="sourceCode" id="cb30"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb30-1"><a href="finding-the-best-model.html#cb30-1" aria-hidden="true" tabindex="-1"></a>m3 <span class="ot">&lt;-</span> <span class="fu">lm</span>(score <span class="sc">~</span> rank <span class="sc">+</span> gender <span class="sc">+</span> ethnicity <span class="sc">+</span> language <span class="sc">+</span> age <span class="sc">+</span> cls_perc_eval </span>
+<span id="cb30-2"><a href="finding-the-best-model.html#cb30-2" aria-hidden="true" tabindex="-1"></a>             <span class="sc">+</span> cls_credits <span class="sc">+</span> bty_avg <span class="sc">+</span> pic_outfit <span class="sc">+</span> pic_color, <span class="at">data =</span> evals)</span>
+<span id="cb30-3"><a href="finding-the-best-model.html#cb30-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb30-4"><a href="finding-the-best-model.html#cb30-4" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(m3)</span></code></pre></div>
 <p><br></p>
-<div class="sourceCode" id="cb31"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb31-1"><a href="finding-the-best-model.html#cb31-1"></a>m4 &lt;-<span class="st"> </span><span class="kw">lm</span>(score <span class="op">~</span><span class="st"> </span>gender <span class="op">+</span><span class="st"> </span>ethnicity <span class="op">+</span><span class="st"> </span>language <span class="op">+</span><span class="st"> </span>age <span class="op">+</span><span class="st"> </span>cls_perc_eval </span>
-<span id="cb31-2"><a href="finding-the-best-model.html#cb31-2"></a>             <span class="op">+</span><span class="st"> </span>cls_credits <span class="op">+</span><span class="st"> </span>bty_avg <span class="op">+</span><span class="st"> </span>pic_outfit <span class="op">+</span><span class="st"> </span>pic_color, <span class="dt">data =</span> evals)</span>
-<span id="cb31-3"><a href="finding-the-best-model.html#cb31-3"></a></span>
-<span id="cb31-4"><a href="finding-the-best-model.html#cb31-4"></a><span class="kw">summary</span>(m4)</span></code></pre></div>
+<div class="sourceCode" id="cb31"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb31-1"><a href="finding-the-best-model.html#cb31-1" aria-hidden="true" tabindex="-1"></a>m4 <span class="ot">&lt;-</span> <span class="fu">lm</span>(score <span class="sc">~</span> gender <span class="sc">+</span> ethnicity <span class="sc">+</span> language <span class="sc">+</span> age <span class="sc">+</span> cls_perc_eval </span>
+<span id="cb31-2"><a href="finding-the-best-model.html#cb31-2" aria-hidden="true" tabindex="-1"></a>             <span class="sc">+</span> cls_credits <span class="sc">+</span> bty_avg <span class="sc">+</span> pic_outfit <span class="sc">+</span> pic_color, <span class="at">data =</span> evals)</span>
+<span id="cb31-3"><a href="finding-the-best-model.html#cb31-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb31-4"><a href="finding-the-best-model.html#cb31-4" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(m4)</span></code></pre></div>
 <p><br></p>
-<div class="sourceCode" id="cb32"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb32-1"><a href="finding-the-best-model.html#cb32-1"></a>m5 &lt;-<span class="st"> </span><span class="kw">lm</span>(score <span class="op">~</span><span class="st"> </span>gender <span class="op">+</span><span class="st"> </span>ethnicity <span class="op">+</span><span class="st"> </span>language <span class="op">+</span><span class="st"> </span>age <span class="op">+</span><span class="st"> </span>cls_perc_eval </span>
-<span id="cb32-2"><a href="finding-the-best-model.html#cb32-2"></a>             <span class="op">+</span><span class="st"> </span>cls_credits <span class="op">+</span><span class="st"> </span>bty_avg <span class="op">+</span><span class="st"> </span>pic_color, <span class="dt">data =</span> evals)</span>
-<span id="cb32-3"><a href="finding-the-best-model.html#cb32-3"></a></span>
-<span id="cb32-4"><a href="finding-the-best-model.html#cb32-4"></a><span class="kw">summary</span>(m5)</span></code></pre></div>
+<div class="sourceCode" id="cb32"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb32-1"><a href="finding-the-best-model.html#cb32-1" aria-hidden="true" tabindex="-1"></a>m5 <span class="ot">&lt;-</span> <span class="fu">lm</span>(score <span class="sc">~</span> gender <span class="sc">+</span> ethnicity <span class="sc">+</span> language <span class="sc">+</span> age <span class="sc">+</span> cls_perc_eval </span>
+<span id="cb32-2"><a href="finding-the-best-model.html#cb32-2" aria-hidden="true" tabindex="-1"></a>             <span class="sc">+</span> cls_credits <span class="sc">+</span> bty_avg <span class="sc">+</span> pic_color, <span class="at">data =</span> evals)</span>
+<span id="cb32-3"><a href="finding-the-best-model.html#cb32-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb32-4"><a href="finding-the-best-model.html#cb32-4" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(m5)</span></code></pre></div>
 <p><br></p>
 <p>The p-value for <code>cls_students</code> - the total number of students in the class - for the step when it was removed is (to 4 decimal places): <input class='webex-solveme nospaces' size='6' data-answer='["0.3195",".3195"]'/></p>
 <p><br></p>
 <p><strong>Which variables have remained within the model? (Select and check multiple)</strong></p>
-<div id="radio_MXAPPXJBGJ" class="webex-radiogroup">
-<label><input type="radio" autocomplete="off" name="radio_MXAPPXJBGJ" value="answer"></input> <span>pic_color</span></label><label><input type="radio" autocomplete="off" name="radio_MXAPPXJBGJ" value=""></input> <span>cls_level</span></label><label><input type="radio" autocomplete="off" name="radio_MXAPPXJBGJ" value="answer"></input> <span>gender</span></label><label><input type="radio" autocomplete="off" name="radio_MXAPPXJBGJ" value=""></input> <span>cls_profs</span></label><label><input type="radio" autocomplete="off" name="radio_MXAPPXJBGJ" value="answer"></input> <span>cls_credits</span></label><label><input type="radio" autocomplete="off" name="radio_MXAPPXJBGJ" value="answer"></input> <span>cls_perc_eval</span></label><label><input type="radio" autocomplete="off" name="radio_MXAPPXJBGJ" value="answer"></input> <span>language</span></label><label><input type="radio" autocomplete="off" name="radio_MXAPPXJBGJ" value="answer"></input> <span>bty_avg</span></label><label><input type="radio" autocomplete="off" name="radio_MXAPPXJBGJ" value="answer"></input> <span>ethnicity</span></label><label><input type="radio" autocomplete="off" name="radio_MXAPPXJBGJ" value=""></input> <span>rank</span></label><label><input type="radio" autocomplete="off" name="radio_MXAPPXJBGJ" value="answer"></input> <span>age</span></label><label><input type="radio" autocomplete="off" name="radio_MXAPPXJBGJ" value=""></input> <span>cls_students</span></label><label><input type="radio" autocomplete="off" name="radio_MXAPPXJBGJ" value=""></input> <span>pic_outfit</span></label>
+<div id="radio_ONHORPMQIK" class="webex-radiogroup">
+<label><input type="radio" autocomplete="off" name="radio_ONHORPMQIK" value=""></input> <span>cls_students</span></label><label><input type="radio" autocomplete="off" name="radio_ONHORPMQIK" value=""></input> <span>rank</span></label><label><input type="radio" autocomplete="off" name="radio_ONHORPMQIK" value="answer"></input> <span>gender</span></label><label><input type="radio" autocomplete="off" name="radio_ONHORPMQIK" value="answer"></input> <span>ethnicity</span></label><label><input type="radio" autocomplete="off" name="radio_ONHORPMQIK" value="answer"></input> <span>bty_avg</span></label><label><input type="radio" autocomplete="off" name="radio_ONHORPMQIK" value=""></input> <span>pic_outfit</span></label><label><input type="radio" autocomplete="off" name="radio_ONHORPMQIK" value=""></input> <span>cls_profs</span></label><label><input type="radio" autocomplete="off" name="radio_ONHORPMQIK" value="answer"></input> <span>cls_credits</span></label><label><input type="radio" autocomplete="off" name="radio_ONHORPMQIK" value="answer"></input> <span>cls_perc_eval</span></label><label><input type="radio" autocomplete="off" name="radio_ONHORPMQIK" value=""></input> <span>cls_level</span></label><label><input type="radio" autocomplete="off" name="radio_ONHORPMQIK" value="answer"></input> <span>pic_color</span></label><label><input type="radio" autocomplete="off" name="radio_ONHORPMQIK" value="answer"></input> <span>language</span></label><label><input type="radio" autocomplete="off" name="radio_ONHORPMQIK" value="answer"></input> <span>age</span></label>
 </div>
 <p><br></p>
 </div>
-<div id="exercise-9" class="section level2 hasAnchor">
+<div id="exercise-9" class="section level2 hasAnchor" number="6.4">
 <h2><span class="header-section-number">6.4</span> <strong>Exercise 9</strong><a href="finding-the-best-model.html#exercise-9" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>Produce residual plots for the final model produced. Run code to produce the model again before creating the residual plots and call the model <code>finalmodel</code>.</p>
 <div class="webex-solution">
 <button>
 Hint 1
 </button>
-<div class="sourceCode" id="cb33"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb33-1"><a href="finding-the-best-model.html#cb33-1"></a>finalmodel &lt;-<span class="st"> </span><span class="kw">lm</span>(???)</span>
-<span id="cb33-2"><a href="finding-the-best-model.html#cb33-2"></a></span>
-<span id="cb33-3"><a href="finding-the-best-model.html#cb33-3"></a><span class="kw">summary</span>(???)</span>
-<span id="cb33-4"><a href="finding-the-best-model.html#cb33-4"></a></span>
-<span id="cb33-5"><a href="finding-the-best-model.html#cb33-5"></a><span class="kw">ggplot</span>(<span class="dt">data =</span> ???, <span class="kw">aes</span>(???)) <span class="op">+</span></span>
-<span id="cb33-6"><a href="finding-the-best-model.html#cb33-6"></a><span class="st">  </span><span class="kw">geom_point</span>(<span class="dt">color =</span> <span class="st">&quot;seagreen2&quot;</span>) <span class="op">+</span></span>
-<span id="cb33-7"><a href="finding-the-best-model.html#cb33-7"></a><span class="st">  </span><span class="kw">geom_hline</span>(<span class="dt">yintercept =</span> <span class="dv">0</span>, <span class="dt">linetype =</span> <span class="st">&quot;dashed&quot;</span>) <span class="op">+</span></span>
-<span id="cb33-8"><a href="finding-the-best-model.html#cb33-8"></a><span class="st">  </span><span class="kw">xlab</span>(???) <span class="op">+</span></span>
-<span id="cb33-9"><a href="finding-the-best-model.html#cb33-9"></a><span class="st">  </span><span class="kw">ylab</span>(???)</span>
-<span id="cb33-10"><a href="finding-the-best-model.html#cb33-10"></a></span>
-<span id="cb33-11"><a href="finding-the-best-model.html#cb33-11"></a><span class="kw">ggplot</span>(<span class="dt">data =</span> ???, <span class="kw">aes</span>(???)) <span class="op">+</span></span>
-<span id="cb33-12"><a href="finding-the-best-model.html#cb33-12"></a><span class="st">  </span><span class="kw">geom_histogram</span>(<span class="dt">bins =</span> <span class="dv">40</span>, <span class="dt">fill =</span> <span class="st">&quot;dodgerblue2&quot;</span>) <span class="op">+</span></span>
-<span id="cb33-13"><a href="finding-the-best-model.html#cb33-13"></a><span class="st">  </span><span class="kw">xlab</span>(???)</span>
-<span id="cb33-14"><a href="finding-the-best-model.html#cb33-14"></a></span>
-<span id="cb33-15"><a href="finding-the-best-model.html#cb33-15"></a><span class="kw">ggplot</span>(<span class="dt">data =</span> ???, <span class="kw">aes</span>(???)) <span class="op">+</span></span>
-<span id="cb33-16"><a href="finding-the-best-model.html#cb33-16"></a><span class="st">  </span><span class="kw">stat_qq</span>() <span class="op">+</span></span>
-<span id="cb33-17"><a href="finding-the-best-model.html#cb33-17"></a><span class="st">  </span><span class="kw">stat_qq_line</span>(<span class="dt">col =</span> <span class="dv">2</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb33"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb33-1"><a href="finding-the-best-model.html#cb33-1" aria-hidden="true" tabindex="-1"></a>finalmodel <span class="ot">&lt;-</span> <span class="fu">lm</span>(???)</span>
+<span id="cb33-2"><a href="finding-the-best-model.html#cb33-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb33-3"><a href="finding-the-best-model.html#cb33-3" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(???)</span>
+<span id="cb33-4"><a href="finding-the-best-model.html#cb33-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb33-5"><a href="finding-the-best-model.html#cb33-5" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> ???, <span class="fu">aes</span>(???)) <span class="sc">+</span></span>
+<span id="cb33-6"><a href="finding-the-best-model.html#cb33-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="at">color =</span> <span class="st">&quot;seagreen2&quot;</span>) <span class="sc">+</span></span>
+<span id="cb33-7"><a href="finding-the-best-model.html#cb33-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_hline</span>(<span class="at">yintercept =</span> <span class="dv">0</span>, <span class="at">linetype =</span> <span class="st">&quot;dashed&quot;</span>) <span class="sc">+</span></span>
+<span id="cb33-8"><a href="finding-the-best-model.html#cb33-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">xlab</span>(???) <span class="sc">+</span></span>
+<span id="cb33-9"><a href="finding-the-best-model.html#cb33-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ylab</span>(???)</span>
+<span id="cb33-10"><a href="finding-the-best-model.html#cb33-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb33-11"><a href="finding-the-best-model.html#cb33-11" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> ???, <span class="fu">aes</span>(???)) <span class="sc">+</span></span>
+<span id="cb33-12"><a href="finding-the-best-model.html#cb33-12" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_histogram</span>(<span class="at">bins =</span> <span class="dv">40</span>, <span class="at">fill =</span> <span class="st">&quot;dodgerblue2&quot;</span>) <span class="sc">+</span></span>
+<span id="cb33-13"><a href="finding-the-best-model.html#cb33-13" aria-hidden="true" tabindex="-1"></a>  <span class="fu">xlab</span>(???)</span>
+<span id="cb33-14"><a href="finding-the-best-model.html#cb33-14" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb33-15"><a href="finding-the-best-model.html#cb33-15" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> ???, <span class="fu">aes</span>(???)) <span class="sc">+</span></span>
+<span id="cb33-16"><a href="finding-the-best-model.html#cb33-16" aria-hidden="true" tabindex="-1"></a>  <span class="fu">stat_qq</span>() <span class="sc">+</span></span>
+<span id="cb33-17"><a href="finding-the-best-model.html#cb33-17" aria-hidden="true" tabindex="-1"></a>  <span class="fu">stat_qq_line</span>(<span class="at">col =</span> <span class="dv">2</span>)</span></code></pre></div>
 </div>
 <div class="webex-solution">
 <button>
 Hint 2
 </button>
-<div class="sourceCode" id="cb34"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb34-1"><a href="finding-the-best-model.html#cb34-1"></a>finalmodel &lt;-<span class="st"> </span><span class="kw">lm</span>(??? <span class="op">~</span><span class="st"> </span>??? <span class="op">+</span><span class="st"> </span>... <span class="op">+</span><span class="st"> </span>???, <span class="dt">data =</span> ???)</span>
-<span id="cb34-2"><a href="finding-the-best-model.html#cb34-2"></a></span>
-<span id="cb34-3"><a href="finding-the-best-model.html#cb34-3"></a><span class="kw">summary</span>(???)</span>
-<span id="cb34-4"><a href="finding-the-best-model.html#cb34-4"></a></span>
-<span id="cb34-5"><a href="finding-the-best-model.html#cb34-5"></a><span class="kw">ggplot</span>(<span class="dt">data =</span> ???, <span class="kw">aes</span>(???)) <span class="op">+</span></span>
-<span id="cb34-6"><a href="finding-the-best-model.html#cb34-6"></a><span class="st">  </span><span class="kw">geom_point</span>(<span class="dt">color =</span> <span class="st">&quot;seagreen2&quot;</span>) <span class="op">+</span></span>
-<span id="cb34-7"><a href="finding-the-best-model.html#cb34-7"></a><span class="st">  </span><span class="kw">geom_hline</span>(<span class="dt">yintercept =</span> <span class="dv">0</span>, <span class="dt">linetype =</span> <span class="st">&quot;dashed&quot;</span>) <span class="op">+</span></span>
-<span id="cb34-8"><a href="finding-the-best-model.html#cb34-8"></a><span class="st">  </span><span class="kw">xlab</span>(<span class="st">&quot;Fitted values&quot;</span>) <span class="op">+</span></span>
-<span id="cb34-9"><a href="finding-the-best-model.html#cb34-9"></a><span class="st">  </span><span class="kw">ylab</span>(<span class="st">&quot;Residuals&quot;</span>)</span>
-<span id="cb34-10"><a href="finding-the-best-model.html#cb34-10"></a></span>
-<span id="cb34-11"><a href="finding-the-best-model.html#cb34-11"></a><span class="kw">ggplot</span>(<span class="dt">data =</span> ???, <span class="kw">aes</span>(???)) <span class="op">+</span></span>
-<span id="cb34-12"><a href="finding-the-best-model.html#cb34-12"></a><span class="st">  </span><span class="kw">geom_histogram</span>(<span class="dt">bins =</span> <span class="dv">40</span>, <span class="dt">fill =</span> <span class="st">&quot;dodgerblue2&quot;</span>) <span class="op">+</span></span>
-<span id="cb34-13"><a href="finding-the-best-model.html#cb34-13"></a><span class="st">  </span><span class="kw">xlab</span>(<span class="st">&quot;Residuals&quot;</span>)</span>
-<span id="cb34-14"><a href="finding-the-best-model.html#cb34-14"></a></span>
-<span id="cb34-15"><a href="finding-the-best-model.html#cb34-15"></a><span class="kw">ggplot</span>(<span class="dt">data =</span> ???, <span class="kw">aes</span>(???)) <span class="op">+</span></span>
-<span id="cb34-16"><a href="finding-the-best-model.html#cb34-16"></a><span class="st">  </span><span class="kw">stat_qq</span>() <span class="op">+</span></span>
-<span id="cb34-17"><a href="finding-the-best-model.html#cb34-17"></a><span class="st">  </span><span class="kw">stat_qq_line</span>(<span class="dt">col =</span> <span class="dv">2</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb34"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb34-1"><a href="finding-the-best-model.html#cb34-1" aria-hidden="true" tabindex="-1"></a>finalmodel <span class="ot">&lt;-</span> <span class="fu">lm</span>(??? <span class="sc">~</span> ??? <span class="sc">+</span> ... <span class="sc">+</span> ???, <span class="at">data =</span> ???)</span>
+<span id="cb34-2"><a href="finding-the-best-model.html#cb34-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb34-3"><a href="finding-the-best-model.html#cb34-3" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(???)</span>
+<span id="cb34-4"><a href="finding-the-best-model.html#cb34-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb34-5"><a href="finding-the-best-model.html#cb34-5" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> ???, <span class="fu">aes</span>(???)) <span class="sc">+</span></span>
+<span id="cb34-6"><a href="finding-the-best-model.html#cb34-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="at">color =</span> <span class="st">&quot;seagreen2&quot;</span>) <span class="sc">+</span></span>
+<span id="cb34-7"><a href="finding-the-best-model.html#cb34-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_hline</span>(<span class="at">yintercept =</span> <span class="dv">0</span>, <span class="at">linetype =</span> <span class="st">&quot;dashed&quot;</span>) <span class="sc">+</span></span>
+<span id="cb34-8"><a href="finding-the-best-model.html#cb34-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">xlab</span>(<span class="st">&quot;Fitted values&quot;</span>) <span class="sc">+</span></span>
+<span id="cb34-9"><a href="finding-the-best-model.html#cb34-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ylab</span>(<span class="st">&quot;Residuals&quot;</span>)</span>
+<span id="cb34-10"><a href="finding-the-best-model.html#cb34-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb34-11"><a href="finding-the-best-model.html#cb34-11" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> ???, <span class="fu">aes</span>(???)) <span class="sc">+</span></span>
+<span id="cb34-12"><a href="finding-the-best-model.html#cb34-12" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_histogram</span>(<span class="at">bins =</span> <span class="dv">40</span>, <span class="at">fill =</span> <span class="st">&quot;dodgerblue2&quot;</span>) <span class="sc">+</span></span>
+<span id="cb34-13"><a href="finding-the-best-model.html#cb34-13" aria-hidden="true" tabindex="-1"></a>  <span class="fu">xlab</span>(<span class="st">&quot;Residuals&quot;</span>)</span>
+<span id="cb34-14"><a href="finding-the-best-model.html#cb34-14" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb34-15"><a href="finding-the-best-model.html#cb34-15" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> ???, <span class="fu">aes</span>(???)) <span class="sc">+</span></span>
+<span id="cb34-16"><a href="finding-the-best-model.html#cb34-16" aria-hidden="true" tabindex="-1"></a>  <span class="fu">stat_qq</span>() <span class="sc">+</span></span>
+<span id="cb34-17"><a href="finding-the-best-model.html#cb34-17" aria-hidden="true" tabindex="-1"></a>  <span class="fu">stat_qq_line</span>(<span class="at">col =</span> <span class="dv">2</span>)</span></code></pre></div>
 </div>
 <div class="webex-solution">
 <button>
 Solution
 </button>
-<div class="sourceCode" id="cb35"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb35-1"><a href="finding-the-best-model.html#cb35-1"></a>finalmodel &lt;-<span class="st"> </span><span class="kw">lm</span>(score <span class="op">~</span><span class="st"> </span>gender <span class="op">+</span><span class="st"> </span>ethnicity <span class="op">+</span><span class="st"> </span>language <span class="op">+</span><span class="st"> </span>age <span class="op">+</span><span class="st"> </span>cls_perc_eval </span>
-<span id="cb35-2"><a href="finding-the-best-model.html#cb35-2"></a>             <span class="op">+</span><span class="st"> </span>cls_credits <span class="op">+</span><span class="st"> </span>bty_avg <span class="op">+</span><span class="st"> </span>pic_color, <span class="dt">data =</span> evals)</span>
-<span id="cb35-3"><a href="finding-the-best-model.html#cb35-3"></a></span>
-<span id="cb35-4"><a href="finding-the-best-model.html#cb35-4"></a><span class="kw">summary</span>(finalmodel)</span>
-<span id="cb35-5"><a href="finding-the-best-model.html#cb35-5"></a></span>
-<span id="cb35-6"><a href="finding-the-best-model.html#cb35-6"></a><span class="kw">ggplot</span>(<span class="dt">data =</span> finalmodel, <span class="kw">aes</span>(<span class="dt">x =</span> .fitted, <span class="dt">y =</span> .resid)) <span class="op">+</span></span>
-<span id="cb35-7"><a href="finding-the-best-model.html#cb35-7"></a><span class="st">  </span><span class="kw">geom_point</span>(<span class="dt">color =</span> <span class="st">&quot;seagreen2&quot;</span>) <span class="op">+</span></span>
-<span id="cb35-8"><a href="finding-the-best-model.html#cb35-8"></a><span class="st">  </span><span class="kw">geom_hline</span>(<span class="dt">yintercept =</span> <span class="dv">0</span>, <span class="dt">linetype =</span> <span class="st">&quot;dashed&quot;</span>) <span class="op">+</span></span>
-<span id="cb35-9"><a href="finding-the-best-model.html#cb35-9"></a><span class="st">  </span><span class="kw">xlab</span>(<span class="st">&quot;Fitted values&quot;</span>) <span class="op">+</span></span>
-<span id="cb35-10"><a href="finding-the-best-model.html#cb35-10"></a><span class="st">  </span><span class="kw">ylab</span>(<span class="st">&quot;Residuals&quot;</span>)</span>
-<span id="cb35-11"><a href="finding-the-best-model.html#cb35-11"></a></span>
-<span id="cb35-12"><a href="finding-the-best-model.html#cb35-12"></a><span class="kw">ggplot</span>(<span class="dt">data =</span> finalmodel, <span class="kw">aes</span>(<span class="dt">x =</span> .resid)) <span class="op">+</span></span>
-<span id="cb35-13"><a href="finding-the-best-model.html#cb35-13"></a><span class="st">  </span><span class="kw">geom_histogram</span>(<span class="dt">bins =</span> <span class="dv">40</span>, <span class="dt">fill =</span> <span class="st">&quot;dodgerblue2&quot;</span>) <span class="op">+</span></span>
-<span id="cb35-14"><a href="finding-the-best-model.html#cb35-14"></a><span class="st">  </span><span class="kw">xlab</span>(<span class="st">&quot;Residuals&quot;</span>)</span>
-<span id="cb35-15"><a href="finding-the-best-model.html#cb35-15"></a></span>
-<span id="cb35-16"><a href="finding-the-best-model.html#cb35-16"></a><span class="kw">ggplot</span>(<span class="dt">data =</span> finalmodel, <span class="kw">aes</span>(<span class="dt">sample =</span> .resid)) <span class="op">+</span></span>
-<span id="cb35-17"><a href="finding-the-best-model.html#cb35-17"></a><span class="st">  </span><span class="kw">stat_qq</span>() <span class="op">+</span></span>
-<span id="cb35-18"><a href="finding-the-best-model.html#cb35-18"></a><span class="st">  </span><span class="kw">stat_qq_line</span>(<span class="dt">col =</span> <span class="dv">2</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb35"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb35-1"><a href="finding-the-best-model.html#cb35-1" aria-hidden="true" tabindex="-1"></a>finalmodel <span class="ot">&lt;-</span> <span class="fu">lm</span>(score <span class="sc">~</span> gender <span class="sc">+</span> ethnicity <span class="sc">+</span> language <span class="sc">+</span> age <span class="sc">+</span> cls_perc_eval </span>
+<span id="cb35-2"><a href="finding-the-best-model.html#cb35-2" aria-hidden="true" tabindex="-1"></a>             <span class="sc">+</span> cls_credits <span class="sc">+</span> bty_avg <span class="sc">+</span> pic_color, <span class="at">data =</span> evals)</span>
+<span id="cb35-3"><a href="finding-the-best-model.html#cb35-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb35-4"><a href="finding-the-best-model.html#cb35-4" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(finalmodel)</span>
+<span id="cb35-5"><a href="finding-the-best-model.html#cb35-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb35-6"><a href="finding-the-best-model.html#cb35-6" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> finalmodel, <span class="fu">aes</span>(<span class="at">x =</span> .fitted, <span class="at">y =</span> .resid)) <span class="sc">+</span></span>
+<span id="cb35-7"><a href="finding-the-best-model.html#cb35-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="at">color =</span> <span class="st">&quot;seagreen2&quot;</span>) <span class="sc">+</span></span>
+<span id="cb35-8"><a href="finding-the-best-model.html#cb35-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_hline</span>(<span class="at">yintercept =</span> <span class="dv">0</span>, <span class="at">linetype =</span> <span class="st">&quot;dashed&quot;</span>) <span class="sc">+</span></span>
+<span id="cb35-9"><a href="finding-the-best-model.html#cb35-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">xlab</span>(<span class="st">&quot;Fitted values&quot;</span>) <span class="sc">+</span></span>
+<span id="cb35-10"><a href="finding-the-best-model.html#cb35-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ylab</span>(<span class="st">&quot;Residuals&quot;</span>)</span>
+<span id="cb35-11"><a href="finding-the-best-model.html#cb35-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb35-12"><a href="finding-the-best-model.html#cb35-12" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> finalmodel, <span class="fu">aes</span>(<span class="at">x =</span> .resid)) <span class="sc">+</span></span>
+<span id="cb35-13"><a href="finding-the-best-model.html#cb35-13" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_histogram</span>(<span class="at">bins =</span> <span class="dv">40</span>, <span class="at">fill =</span> <span class="st">&quot;dodgerblue2&quot;</span>) <span class="sc">+</span></span>
+<span id="cb35-14"><a href="finding-the-best-model.html#cb35-14" aria-hidden="true" tabindex="-1"></a>  <span class="fu">xlab</span>(<span class="st">&quot;Residuals&quot;</span>)</span>
+<span id="cb35-15"><a href="finding-the-best-model.html#cb35-15" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb35-16"><a href="finding-the-best-model.html#cb35-16" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> finalmodel, <span class="fu">aes</span>(<span class="at">sample =</span> .resid)) <span class="sc">+</span></span>
+<span id="cb35-17"><a href="finding-the-best-model.html#cb35-17" aria-hidden="true" tabindex="-1"></a>  <span class="fu">stat_qq</span>() <span class="sc">+</span></span>
+<span id="cb35-18"><a href="finding-the-best-model.html#cb35-18" aria-hidden="true" tabindex="-1"></a>  <span class="fu">stat_qq_line</span>(<span class="at">col =</span> <span class="dv">2</span>)</span></code></pre></div>
 </div>
 <p><br></p>
 <p>Based on the final model, we can describe the characteristics of a lecturer and course at University of Texas at Austin that would be associated with a high evaluation score.</p>
 <p>The equation for this becomes:</p>
-<p><span class="math display">\[ 
+<p><span class="math display">\[
 \begin{aligned}
 \text{score} &amp;= 3.7719 + 0.2071 \text{ gender: male} + 0.1679 \text{ ethnicity: not minority} \\
 &amp; - 0.2062 \text{ language non-english} - 0.0060 \text{ age} + 0.0047 \text{ Percent of students in class who completed evaluation} \\
@@ -356,13 +362,13 @@ Solution
 \]</span></p>
 <p><br></p>
 <p><strong>Would you be comfortable generalising your conclusions to apply to lecturers generally (at any university)?</strong></p>
-<div id="radio_XSQVGEFITH" class="webex-radiogroup">
-<label><input type="radio" autocomplete="off" name="radio_XSQVGEFITH" value=""></input> <span>Yes</span></label><label><input type="radio" autocomplete="off" name="radio_XSQVGEFITH" value="answer"></input> <span>Maybe</span></label><label><input type="radio" autocomplete="off" name="radio_XSQVGEFITH" value=""></input> <span>No</span></label>
+<div id="radio_PRLMKFUOYV" class="webex-radiogroup">
+<label><input type="radio" autocomplete="off" name="radio_PRLMKFUOYV" value="answer"></input> <span>Maybe</span></label><label><input type="radio" autocomplete="off" name="radio_PRLMKFUOYV" value=""></input> <span>No</span></label><label><input type="radio" autocomplete="off" name="radio_PRLMKFUOYV" value=""></input> <span>Yes</span></label>
 </div>
 <p><br></p>
 <p><strong>Should the R squared or adjusted R squared be used for model selection in this example?</strong></p>
-<div id="radio_WPVBCCEABK" class="webex-radiogroup">
-<label><input type="radio" autocomplete="off" name="radio_WPVBCCEABK" value="answer"></input> <span>Adjusted R-squared</span></label><label><input type="radio" autocomplete="off" name="radio_WPVBCCEABK" value=""></input> <span>R-squared</span></label>
+<div id="radio_ZVWULEMGIW" class="webex-radiogroup">
+<label><input type="radio" autocomplete="off" name="radio_ZVWULEMGIW" value="answer"></input> <span>Adjusted R-squared</span></label><label><input type="radio" autocomplete="off" name="radio_ZVWULEMGIW" value=""></input> <span>R-squared</span></label>
 </div>
 <p><br></p>
 

@@ -23,9 +23,10 @@ The data to be analyzed are saved in a csv file called `evals.csv`(you can read 
 
 ```{r import-data-optional, echo=TRUE, warnings=FALSE, message=FALSE}
 evals <- read.csv(url("https://raw.githubusercontent.com/Glasgow-Stats-L1-L2/S1Z_Lab4/main/evals.csv"))
+glimpse(evals)
 ```
 
-You may download the dataset named `evals.csv` file from our Moodle course page. Once the file has downloaded, **save it in the same folder** as the `R` script file you created and saved for this lab. You should now set your working directory to this location by clicking `Session > Set Working Directory > To Source File Location`. You can load the data set into your workspace by running `mlb11 <- read.csv("evals.csv")`. 
+You may download the dataset named `evals.csv` file from our Moodle course page. Once the file has downloaded, **save it in the same folder** as the `R` script file you created and saved for this lab. You should now set your working directory to this location by clicking `Session > Set Working Directory > To Source File Location`. You can load the data set into your workspace by running `evals <- read.csv("evals.csv")`. 
 
 
 It can be seen that the data contains 23 variables which we will explore to see if they have any relationship with the variable `score`, the evaluation score of each lecturer in each course (the "response" variable). These variables include both categorical and numerical types of variables.

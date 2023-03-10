@@ -196,8 +196,34 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <p>In this lab we will analyze the data from this study in order to learn what goes into a positive lecturer evaluation.</p>
 <p>The data were gathered from end of semester student evaluations for a large sample of lecturers from the University of Texas at Austin. In addition, six students rated the lecturers' physical appearance. The result is a data frame where each row contains a different course/lecturer and columns represent variables about the courses and lecturers.</p>
 <p>The data to be analyzed are saved in a csv file called <code>evals.csv</code>(you can read more about it <a href="https://www.openintro.org/data/index.php?data=evals"> here</a>). We can load the data and view the first few lines of the data by running the code below.</p>
-<div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb2-1"><a href="exploratory-data-analysis.html#cb2-1" aria-hidden="true" tabindex="-1"></a>evals <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="fu">url</span>(<span class="st">&quot;https://raw.githubusercontent.com/Glasgow-Stats-L1-L2/S1Z_Lab4/main/evals.csv&quot;</span>))</span></code></pre></div>
-<p>You may download the dataset named <code>evals.csv</code> file from our Moodle course page. Once the file has downloaded, <strong>save it in the same folder</strong> as the <code>R</code> script file you created and saved for this lab. You should now set your working directory to this location by clicking <code>Session &gt; Set Working Directory &gt; To Source File Location</code>. You can load the data set into your workspace by running <code>mlb11 &lt;- read.csv("evals.csv")</code>.</p>
+<div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb2-1"><a href="exploratory-data-analysis.html#cb2-1" aria-hidden="true" tabindex="-1"></a>evals <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="fu">url</span>(<span class="st">&quot;https://raw.githubusercontent.com/Glasgow-Stats-L1-L2/S1Z_Lab4/main/evals.csv&quot;</span>))</span>
+<span id="cb2-2"><a href="exploratory-data-analysis.html#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="fu">glimpse</span>(evals)</span></code></pre></div>
+<pre><code>## Rows: 463
+## Columns: 23
+## $ course_id     &lt;int&gt; 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 1~
+## $ prof_id       &lt;int&gt; 1, 1, 1, 1, 2, 2, 2, 3, 3, 4, 4, 4, 4, 4, 4, 4, 4, 5, 5,~
+## $ score         &lt;dbl&gt; 4.7, 4.1, 3.9, 4.8, 4.6, 4.3, 2.8, 4.1, 3.4, 4.5, 3.8, 4~
+## $ rank          &lt;chr&gt; &quot;tenure track&quot;, &quot;tenure track&quot;, &quot;tenure track&quot;, &quot;tenure ~
+## $ ethnicity     &lt;chr&gt; &quot;minority&quot;, &quot;minority&quot;, &quot;minority&quot;, &quot;minority&quot;, &quot;not min~
+## $ gender        &lt;chr&gt; &quot;female&quot;, &quot;female&quot;, &quot;female&quot;, &quot;female&quot;, &quot;male&quot;, &quot;male&quot;, ~
+## $ language      &lt;chr&gt; &quot;english&quot;, &quot;english&quot;, &quot;english&quot;, &quot;english&quot;, &quot;english&quot;, &quot;~
+## $ age           &lt;int&gt; 36, 36, 36, 36, 59, 59, 59, 51, 51, 40, 40, 40, 40, 40, ~
+## $ cls_perc_eval &lt;dbl&gt; 55.81395, 68.80000, 60.80000, 62.60163, 85.00000, 87.500~
+## $ cls_did_eval  &lt;int&gt; 24, 86, 76, 77, 17, 35, 39, 55, 111, 40, 24, 24, 17, 14,~
+## $ cls_students  &lt;int&gt; 43, 125, 125, 123, 20, 40, 44, 55, 195, 46, 27, 25, 20, ~
+## $ cls_level     &lt;chr&gt; &quot;upper&quot;, &quot;upper&quot;, &quot;upper&quot;, &quot;upper&quot;, &quot;upper&quot;, &quot;upper&quot;, &quot;u~
+## $ cls_profs     &lt;chr&gt; &quot;single&quot;, &quot;single&quot;, &quot;single&quot;, &quot;single&quot;, &quot;multiple&quot;, &quot;mul~
+## $ cls_credits   &lt;chr&gt; &quot;multi credit&quot;, &quot;multi credit&quot;, &quot;multi credit&quot;, &quot;multi c~
+## $ bty_f1lower   &lt;int&gt; 5, 5, 5, 5, 4, 4, 4, 5, 5, 2, 2, 2, 2, 2, 2, 2, 2, 7, 7,~
+## $ bty_f1upper   &lt;int&gt; 7, 7, 7, 7, 4, 4, 4, 2, 2, 5, 5, 5, 5, 5, 5, 5, 5, 9, 9,~
+## $ bty_f2upper   &lt;int&gt; 6, 6, 6, 6, 2, 2, 2, 5, 5, 4, 4, 4, 4, 4, 4, 4, 4, 9, 9,~
+## $ bty_m1lower   &lt;int&gt; 2, 2, 2, 2, 2, 2, 2, 2, 2, 3, 3, 3, 3, 3, 3, 3, 3, 7, 7,~
+## $ bty_m1upper   &lt;int&gt; 4, 4, 4, 4, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 6, 6,~
+## $ bty_m2upper   &lt;int&gt; 6, 6, 6, 6, 3, 3, 3, 3, 3, 2, 2, 2, 2, 2, 2, 2, 2, 6, 6,~
+## $ bty_avg       &lt;dbl&gt; 5.000, 5.000, 5.000, 5.000, 3.000, 3.000, 3.000, 3.333, ~
+## $ pic_outfit    &lt;chr&gt; &quot;not formal&quot;, &quot;not formal&quot;, &quot;not formal&quot;, &quot;not formal&quot;, ~
+## $ pic_color     &lt;chr&gt; &quot;color&quot;, &quot;color&quot;, &quot;color&quot;, &quot;color&quot;, &quot;color&quot;, &quot;color&quot;, &quot;c~</code></pre>
+<p>You may download the dataset named <code>evals.csv</code> file from our Moodle course page. Once the file has downloaded, <strong>save it in the same folder</strong> as the <code>R</code> script file you created and saved for this lab. You should now set your working directory to this location by clicking <code>Session &gt; Set Working Directory &gt; To Source File Location</code>. You can load the data set into your workspace by running <code>evals &lt;- read.csv("evals.csv")</code>.</p>
 <p>It can be seen that the data contains 23 variables which we will explore to see if they have any relationship with the variable <code>score</code>, the evaluation score of each lecturer in each course (the "response" variable). These variables include both categorical and numerical types of variables.</p>
 <p>To find out more about each variable we can use the <code>help</code> function by running <code>?evals</code>.</p>
 <div id="exploring-the-data" class="section level3 hasAnchor" number="2.1.1">
@@ -205,8 +231,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <p>Before we start to model the data, we need to understand the data and the different types of variables.</p>
 <p><br></p>
 <p><strong>What type of study design is this?</strong></p>
-<div id="radio_PWVCCKRMTA" class="webex-radiogroup">
-<label><input type="radio" autocomplete="off" name="radio_PWVCCKRMTA" value="answer"></input> <span>Observational</span></label><label><input type="radio" autocomplete="off" name="radio_PWVCCKRMTA" value=""></input> <span>Experimental</span></label>
+<div id="radio_LXHGDJMAJC" class="webex-radiogroup">
+<label><input type="radio" autocomplete="off" name="radio_LXHGDJMAJC" value=""></input> <span>Experimental</span></label><label><input type="radio" autocomplete="off" name="radio_LXHGDJMAJC" value="answer"></input> <span>Observational</span></label>
 </div>
 <p><br></p>
 </div>
@@ -217,20 +243,20 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <button>
 Hint
 </button>
-<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb3-1"><a href="exploratory-data-analysis.html#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> ???, <span class="fu">aes</span>(???)) <span class="sc">+</span></span>
-<span id="cb3-2"><a href="exploratory-data-analysis.html#cb3-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_histogram</span>(???)</span></code></pre></div>
+<div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb4-1"><a href="exploratory-data-analysis.html#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> ???, <span class="fu">aes</span>(???)) <span class="sc">+</span></span>
+<span id="cb4-2"><a href="exploratory-data-analysis.html#cb4-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_histogram</span>(???)</span></code></pre></div>
 </div>
 <div class="webex-solution">
 <button>
 Solution
 </button>
-<div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb4-1"><a href="exploratory-data-analysis.html#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> evals, <span class="fu">aes</span>(<span class="at">x =</span> score)) <span class="sc">+</span></span>
-<span id="cb4-2"><a href="exploratory-data-analysis.html#cb4-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_histogram</span>(<span class="at">fill =</span> <span class="st">&quot;violetred&quot;</span>, <span class="at">bins =</span> <span class="dv">40</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb5-1"><a href="exploratory-data-analysis.html#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> evals, <span class="fu">aes</span>(<span class="at">x =</span> score)) <span class="sc">+</span></span>
+<span id="cb5-2"><a href="exploratory-data-analysis.html#cb5-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_histogram</span>(<span class="at">fill =</span> <span class="st">&quot;violetred&quot;</span>, <span class="at">bins =</span> <span class="dv">40</span>)</span></code></pre></div>
 </div>
 <p><br></p>
 <p><strong>Is the distribution skewed?</strong></p>
-<div id="radio_QJMZFSXOTL" class="webex-radiogroup">
-<label><input type="radio" autocomplete="off" name="radio_QJMZFSXOTL" value=""></input> <span>No</span></label><label><input type="radio" autocomplete="off" name="radio_QJMZFSXOTL" value=""></input> <span>Yes, right-skewed</span></label><label><input type="radio" autocomplete="off" name="radio_QJMZFSXOTL" value="answer"></input> <span>Yes, left-skewed</span></label>
+<div id="radio_MNRXMVQKJH" class="webex-radiogroup">
+<label><input type="radio" autocomplete="off" name="radio_MNRXMVQKJH" value=""></input> <span>Yes, right-skewed</span></label><label><input type="radio" autocomplete="off" name="radio_MNRXMVQKJH" value="answer"></input> <span>Yes, left-skewed</span></label><label><input type="radio" autocomplete="off" name="radio_MNRXMVQKJH" value=""></input> <span>No</span></label>
 </div>
 <p><br></p>
 </div>
@@ -241,32 +267,32 @@ Solution
 <button>
 Hint
 </button>
-<div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb5-1"><a href="exploratory-data-analysis.html#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> ???, <span class="fu">aes</span>(???)) <span class="sc">+</span></span>
-<span id="cb5-2"><a href="exploratory-data-analysis.html#cb5-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_boxplot</span>(???) <span class="sc">+</span></span>
-<span id="cb5-3"><a href="exploratory-data-analysis.html#cb5-3" aria-hidden="true" tabindex="-1"></a>    <span class="fu">coord_flip</span>()</span></code></pre></div>
+<div class="sourceCode" id="cb6"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb6-1"><a href="exploratory-data-analysis.html#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> ???, <span class="fu">aes</span>(???)) <span class="sc">+</span></span>
+<span id="cb6-2"><a href="exploratory-data-analysis.html#cb6-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_boxplot</span>(???) <span class="sc">+</span></span>
+<span id="cb6-3"><a href="exploratory-data-analysis.html#cb6-3" aria-hidden="true" tabindex="-1"></a>    <span class="fu">coord_flip</span>()</span></code></pre></div>
 </div>
 <div class="webex-solution">
 <button>
 Solution
 </button>
-<div class="sourceCode" id="cb6"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb6-1"><a href="exploratory-data-analysis.html#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> evals, <span class="fu">aes</span>(<span class="at">x =</span> score, <span class="at">y =</span> rank)) <span class="sc">+</span></span>
-<span id="cb6-2"><a href="exploratory-data-analysis.html#cb6-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_boxplot</span>(<span class="at">fill =</span> <span class="st">&quot;steelblue2&quot;</span>) <span class="sc">+</span> </span>
-<span id="cb6-3"><a href="exploratory-data-analysis.html#cb6-3" aria-hidden="true" tabindex="-1"></a>    <span class="fu">coord_flip</span>()</span></code></pre></div>
+<div class="sourceCode" id="cb7"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb7-1"><a href="exploratory-data-analysis.html#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> evals, <span class="fu">aes</span>(<span class="at">x =</span> score, <span class="at">y =</span> rank)) <span class="sc">+</span></span>
+<span id="cb7-2"><a href="exploratory-data-analysis.html#cb7-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_boxplot</span>(<span class="at">fill =</span> <span class="st">&quot;steelblue2&quot;</span>) <span class="sc">+</span> </span>
+<span id="cb7-3"><a href="exploratory-data-analysis.html#cb7-3" aria-hidden="true" tabindex="-1"></a>    <span class="fu">coord_flip</span>()</span></code></pre></div>
 </div>
 <p><br></p>
 <p><strong>What are the values that are used when creating a boxplot? (There are multiple correct answers)</strong></p>
-<div id="radio_EGWDILLSQS" class="webex-radiogroup">
-<label><input type="radio" autocomplete="off" name="radio_EGWDILLSQS" value="answer"></input> <span>Median</span></label><label><input type="radio" autocomplete="off" name="radio_EGWDILLSQS" value=""></input> <span>Mean</span></label><label><input type="radio" autocomplete="off" name="radio_EGWDILLSQS" value="answer"></input> <span>1st Quartile</span></label><label><input type="radio" autocomplete="off" name="radio_EGWDILLSQS" value="answer"></input> <span>Minimum</span></label><label><input type="radio" autocomplete="off" name="radio_EGWDILLSQS" value=""></input> <span>Variance</span></label><label><input type="radio" autocomplete="off" name="radio_EGWDILLSQS" value=""></input> <span>Mode</span></label><label><input type="radio" autocomplete="off" name="radio_EGWDILLSQS" value="answer"></input> <span>3rd Quartile</span></label><label><input type="radio" autocomplete="off" name="radio_EGWDILLSQS" value="answer"></input> <span>Maximum</span></label><label><input type="radio" autocomplete="off" name="radio_EGWDILLSQS" value=""></input> <span>Standard Deviation</span></label>
+<div id="radio_NIFCDUHEDB" class="webex-radiogroup">
+<label><input type="radio" autocomplete="off" name="radio_NIFCDUHEDB" value=""></input> <span>Variance</span></label><label><input type="radio" autocomplete="off" name="radio_NIFCDUHEDB" value="answer"></input> <span>Maximum</span></label><label><input type="radio" autocomplete="off" name="radio_NIFCDUHEDB" value="answer"></input> <span>3rd Quartile</span></label><label><input type="radio" autocomplete="off" name="radio_NIFCDUHEDB" value=""></input> <span>Mean</span></label><label><input type="radio" autocomplete="off" name="radio_NIFCDUHEDB" value=""></input> <span>Mode</span></label><label><input type="radio" autocomplete="off" name="radio_NIFCDUHEDB" value="answer"></input> <span>1st Quartile</span></label><label><input type="radio" autocomplete="off" name="radio_NIFCDUHEDB" value=""></input> <span>Standard Deviation</span></label><label><input type="radio" autocomplete="off" name="radio_NIFCDUHEDB" value="answer"></input> <span>Median</span></label><label><input type="radio" autocomplete="off" name="radio_NIFCDUHEDB" value="answer"></input> <span>Minimum</span></label>
 </div>
 <p><br></p>
 <p><strong>Which of the ranks corrensponds to the highest average score?</strong></p>
-<div id="radio_MONLGFVVCR" class="webex-radiogroup">
-<label><input type="radio" autocomplete="off" name="radio_MONLGFVVCR" value="answer"></input> <span>Teaching</span></label><label><input type="radio" autocomplete="off" name="radio_MONLGFVVCR" value=""></input> <span>Tenured</span></label><label><input type="radio" autocomplete="off" name="radio_MONLGFVVCR" value=""></input> <span>Tenure-track</span></label>
+<div id="radio_NFXXPMKCWJ" class="webex-radiogroup">
+<label><input type="radio" autocomplete="off" name="radio_NFXXPMKCWJ" value=""></input> <span>Tenure-track</span></label><label><input type="radio" autocomplete="off" name="radio_NFXXPMKCWJ" value="answer"></input> <span>Teaching</span></label><label><input type="radio" autocomplete="off" name="radio_NFXXPMKCWJ" value=""></input> <span>Tenured</span></label>
 </div>
 <p><br></p>
 <p><strong>Which of the boxplots has the largest spread (based on the IQR)?</strong></p>
-<div id="radio_WOYGYHCYXH" class="webex-radiogroup">
-<label><input type="radio" autocomplete="off" name="radio_WOYGYHCYXH" value=""></input> <span>Teaching</span></label><label><input type="radio" autocomplete="off" name="radio_WOYGYHCYXH" value="answer"></input> <span>Tenure-track</span></label><label><input type="radio" autocomplete="off" name="radio_WOYGYHCYXH" value=""></input> <span>Tenured</span></label>
+<div id="radio_ZHMECYTUHD" class="webex-radiogroup">
+<label><input type="radio" autocomplete="off" name="radio_ZHMECYTUHD" value=""></input> <span>Teaching</span></label><label><input type="radio" autocomplete="off" name="radio_ZHMECYTUHD" value=""></input> <span>Tenured</span></label><label><input type="radio" autocomplete="off" name="radio_ZHMECYTUHD" value="answer"></input> <span>Tenure-track</span></label>
 </div>
 <p><br></p>
 <p>Create a boxplot of <code>score</code> against <code>ethnicity</code> to explore any relationship, also using colours to distinguish between the different values of <code>gender</code>.</p>
@@ -274,30 +300,30 @@ Solution
 <button>
 Hint
 </button>
-<div class="sourceCode" id="cb7"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb7-1"><a href="exploratory-data-analysis.html#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> ???, <span class="fu">aes</span>(???)) <span class="sc">+</span></span>
-<span id="cb7-2"><a href="exploratory-data-analysis.html#cb7-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_boxplot</span>(???)</span></code></pre></div>
+<div class="sourceCode" id="cb8"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb8-1"><a href="exploratory-data-analysis.html#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> ???, <span class="fu">aes</span>(???)) <span class="sc">+</span></span>
+<span id="cb8-2"><a href="exploratory-data-analysis.html#cb8-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_boxplot</span>(???)</span></code></pre></div>
 </div>
 <div class="webex-solution">
 <button>
 Solution
 </button>
-<div class="sourceCode" id="cb8"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb8-1"><a href="exploratory-data-analysis.html#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> evals, <span class="fu">aes</span>(<span class="at">x =</span> ethnicity, <span class="at">y =</span> score )) <span class="sc">+</span></span>
-<span id="cb8-2"><a href="exploratory-data-analysis.html#cb8-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_boxplot</span>(<span class="fu">aes</span>(<span class="at">fill =</span> gender))</span></code></pre></div>
+<div class="sourceCode" id="cb9"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb9-1"><a href="exploratory-data-analysis.html#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> evals, <span class="fu">aes</span>(<span class="at">x =</span> ethnicity, <span class="at">y =</span> score )) <span class="sc">+</span></span>
+<span id="cb9-2"><a href="exploratory-data-analysis.html#cb9-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_boxplot</span>(<span class="fu">aes</span>(<span class="at">fill =</span> gender))</span></code></pre></div>
 </div>
 <p><br></p>
 <p><strong>Does it appear that different ethnic groups have a similar average score for both men and women?</strong></p>
-<div id="radio_XQTCAVEEEM" class="webex-radiogroup">
-<label><input type="radio" autocomplete="off" name="radio_XQTCAVEEEM" value=""></input> <span>Yes</span></label><label><input type="radio" autocomplete="off" name="radio_XQTCAVEEEM" value="answer"></input> <span>No</span></label>
+<div id="radio_NMBYMSXNVF" class="webex-radiogroup">
+<label><input type="radio" autocomplete="off" name="radio_NMBYMSXNVF" value=""></input> <span>Yes</span></label><label><input type="radio" autocomplete="off" name="radio_NMBYMSXNVF" value="answer"></input> <span>No</span></label>
 </div>
 <p><br></p>
 <p><strong>Does it appear there is a effect for <code>gender</code> within the ethnicity variable?</strong></p>
-<div id="radio_ZDQQCIRUUY" class="webex-radiogroup">
-<label><input type="radio" autocomplete="off" name="radio_ZDQQCIRUUY" value=""></input> <span>No</span></label><label><input type="radio" autocomplete="off" name="radio_ZDQQCIRUUY" value="answer"></input> <span>Yes</span></label>
+<div id="radio_UGDNWHWLZA" class="webex-radiogroup">
+<label><input type="radio" autocomplete="off" name="radio_UGDNWHWLZA" value=""></input> <span>No</span></label><label><input type="radio" autocomplete="off" name="radio_UGDNWHWLZA" value="answer"></input> <span>Yes</span></label>
 </div>
 <p><br></p>
 <p><strong>Which boxplot would you think has the greatest variablility?</strong></p>
-<div id="radio_UZPRBBLLZE" class="webex-radiogroup">
-<label><input type="radio" autocomplete="off" name="radio_UZPRBBLLZE" value=""></input> <span>Minority Ethnicity Male</span></label><label><input type="radio" autocomplete="off" name="radio_UZPRBBLLZE" value=""></input> <span>Minority Ethnicity Female</span></label><label><input type="radio" autocomplete="off" name="radio_UZPRBBLLZE" value=""></input> <span>Not Minority Ethnicity Male</span></label><label><input type="radio" autocomplete="off" name="radio_UZPRBBLLZE" value="answer"></input> <span>Not Minority Ethnicity Female</span></label>
+<div id="radio_FHWCMIBMQR" class="webex-radiogroup">
+<label><input type="radio" autocomplete="off" name="radio_FHWCMIBMQR" value="answer"></input> <span>Not Minority Ethnicity Female</span></label><label><input type="radio" autocomplete="off" name="radio_FHWCMIBMQR" value=""></input> <span>Minority Ethnicity Female</span></label><label><input type="radio" autocomplete="off" name="radio_FHWCMIBMQR" value=""></input> <span>Not Minority Ethnicity Male</span></label><label><input type="radio" autocomplete="off" name="radio_FHWCMIBMQR" value=""></input> <span>Minority Ethnicity Male</span></label>
 </div>
 <p><br></p>
 
